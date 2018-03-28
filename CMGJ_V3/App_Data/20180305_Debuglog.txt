@@ -1,0 +1,16 @@
+2018-03-05 10:19:16.433:关闭计划任务失败：The Scheduler has been Shutdown.
+---------------
+2018-03-05 10:24:59.631:关闭计划任务失败：The Scheduler has been Shutdown.
+---------------
+2018-03-05 10:25:43.587:重启动Application_start失败！
+---------------
+2018-03-05 10:26:02.788:重启动Application_start失败！
+---------------
+2018-03-05 10:27:14.339:关闭计划任务失败：The Scheduler has been Shutdown.
+---------------
+2018-03-05 11:18:43.649:关闭计划任务失败：The Scheduler has been Shutdown.
+---------------
+2018-03-05 16:02:33.682:关闭计划任务失败：The Scheduler has been Shutdown.
+---------------
+2018-03-05 16:09:08.262:关闭计划任务失败：The Scheduler has been Shutdown.
+---------------

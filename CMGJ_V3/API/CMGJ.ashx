@@ -1,0 +1,1 @@
+﻿<%@ WebHandler Language="VB" CodeBehind="CMGJ.ashx.cs" Class="Hidistro.UI.User.API.CMGJ" %>

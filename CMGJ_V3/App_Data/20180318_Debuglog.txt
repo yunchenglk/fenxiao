@@ -1,0 +1,8 @@
+2018-03-18 00:37:51.890:关闭计划任务失败：The Scheduler has been Shutdown.
+---------------
+2018-03-18 00:58:08.258:关闭计划任务失败：The Scheduler has been Shutdown.
+---------------
+2018-03-18 00:58:37.634:关闭计划任务失败：The Scheduler has been Shutdown.
+---------------
+2018-03-18 01:39:06.709:关闭计划任务失败：The Scheduler has been Shutdown.
+---------------

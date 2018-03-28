@@ -1,0 +1,80 @@
+﻿<hi:common_header runat="server" />
+<link href="../templates/common/css/mycss.css" rel="stylesheet" type="text/css">
+<link href="../templates/common/css/public.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+    .navgtionList ul li a span img {
+        max-width: 100%;
+    }
+
+    .navlist ul li a span img {
+        max-width: 100%;
+    }
+
+    .navlist ul li a span {
+        width: 25px;
+        height: 25px;
+    }
+</style>
+<div class="container">
+    <header>
+        <nav>
+            <ul class="clearfix" id="tabMenu">
+                <li class="active" style="width:100%;"><a href="javascript:void(0)">今日任务</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="navgtionList">
+        <ul class="newtitle clearfix">
+            <li>
+                <a href="/Vshop/MyIntegralDetai.aspx?IntegralSourceType=0">
+                    <p class="colorr integral" id="pointAdd"><asp:literal runat="server" id="usePoints" /></p>
+                    <p>可用积分</p>
+                </a>
+            </li>
+            <!--<li>
+                <a href="/Vshop/MyCouponLists.aspx">
+                    <p class="colorr"><asp:literal runat="server" id="litCoupon" /></p>
+                    <p>优惠券</p>
+                </a>
+            </li>-->
+            <li>
+                <a href="/Vshop/MemberAccountBalance.aspx">
+                    <p class="colorr">¥<asp:literal runat="server" id="litAmount" /></p>
+                    <p>账户余额</p>
+                </a>
+            </li>
+            <li>
+                <a href="/Vshop/MemberAccountBalance.aspx">
+                    <p class="colorr">¥<asp:literal runat="server" id="litDAmount" /></p>
+                    <p>冻结金额</p>
+                </a>
+            </li>
+        </ul>
+        <ul>
+            <li>
+                <a href="/Vshop/MemberCenter.aspx">
+                    <span><img src="/images/iconfont-wodeqianbao.png"></span>
+                    <strong>每日签到</strong>
+                </a>
+
+                <span class="glyphicon glyphicon-menu-right"></span>
+            </li>
+        </ul>
+        <ul>
+            <li>
+                <a href="/Vshop/MemberOrders.aspx">
+                    <span><img src="/images/iconfont-xin.png"></span>
+                    <strong>每日分享</strong>
+                </a>
+                <span class="glyphicon glyphicon-menu-right"></span>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div class="members_con">
+    <section class="custom-line-wrap"><hr class="custom-line" style="border-color:#DDD"></section>
+
+</div>
+
+<hi:common_footer runat="server" />

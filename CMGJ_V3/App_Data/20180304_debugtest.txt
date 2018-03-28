@@ -1,0 +1,42 @@
+2018-03-04 19:04:33.777:进入1，必须登录的页面，并且无code请求http://www.sxccmay.com/Vshop/MemberAmountRecord.aspx?ReferralId=0
+---------------
+2018-03-04 20:07:53.972:进入1，必须登录的页面，并且无code请求http://www.sxccmay.com/Vshop/MemberAmountRecord.aspx?ReferralId=0
+---------------
+2018-03-04 20:07:54.003:进入2，检测为匿名用户，并请求授权登录，去获得code参数http://www.sxccmay.com/Vshop/MemberAmountRecord.aspx?ReferralId=0
+---------------
+2018-03-04 20:07:55.664:进入1，必须登录的页面，并且无code请求http://www.sxccmay.com/Vshop/MemberAmountRecord.aspx?type=0&ReferralId=0
+---------------
+2018-03-04 20:07:55.703:进入2，检测为匿名用户，并请求授权登录，去获得code参数http://www.sxccmay.com/Vshop/MemberAmountRecord.aspx?type=0&ReferralId=0
+---------------
+2018-03-04 20:07:56.995:进入1，必须登录的页面，并且无code请求http://www.sxccmay.com/Vshop/MemberCenter.aspx?ReferralId=0
+---------------
+2018-03-04 20:07:57.028:进入2，检测为匿名用户，并请求授权登录，去获得code参数http://www.sxccmay.com/Vshop/MemberCenter.aspx?ReferralId=0
+---------------
+2018-03-04 20:07:58.223:进入1，必须登录的页面，并且无code请求http://www.sxccmay.com/Vshop/MemberCenter.aspx?ReferralId=0
+---------------
+2018-03-04 20:07:58.254:进入2，检测为匿名用户，并请求授权登录，去获得code参数http://www.sxccmay.com/Vshop/MemberCenter.aspx?ReferralId=0
+---------------
+2018-03-04 20:07:58.386:进入1，必须登录的页面，并且无code请求http://www.sxccmay.com/Vshop/MemberCenter.aspx?ReferralId=0
+---------------
+2018-03-04 20:07:58.423:进入2，检测为匿名用户，并请求授权登录，去获得code参数http://www.sxccmay.com/Vshop/MemberCenter.aspx?ReferralId=0
+---------------
+2018-03-04 20:07:58.555:进入1，必须登录的页面，并且无code请求http://www.sxccmay.com/Vshop/MemberCenter.aspx?ReferralId=0
+---------------
+2018-03-04 20:07:58.587:进入2，检测为匿名用户，并请求授权登录，去获得code参数http://www.sxccmay.com/Vshop/MemberCenter.aspx?ReferralId=0
+---------------
+2018-03-04 20:07:58.731:进入1，必须登录的页面，并且无code请求http://www.sxccmay.com/Vshop/MemberCenter.aspx?ReferralId=0
+---------------
+2018-03-04 20:07:58.766:进入2，检测为匿名用户，并请求授权登录，去获得code参数http://www.sxccmay.com/Vshop/MemberCenter.aspx?ReferralId=0
+---------------
+2018-03-04 20:07:58.902:进入1，必须登录的页面，并且无code请求http://www.sxccmay.com/Vshop/MemberCenter.aspx?ReferralId=0
+---------------
+2018-03-04 20:07:58.933:进入2，检测为匿名用户，并请求授权登录，去获得code参数http://www.sxccmay.com/Vshop/MemberCenter.aspx?ReferralId=0
+---------------
+2018-03-04 20:07:59.076:进入1，必须登录的页面，并且无code请求http://www.sxccmay.com/Vshop/MemberCenter.aspx?ReferralId=0
+---------------
+2018-03-04 20:07:59.107:进入2，检测为匿名用户，并请求授权登录，去获得code参数http://www.sxccmay.com/Vshop/MemberCenter.aspx?ReferralId=0
+---------------
+2018-03-04 20:07:59.235:进入1，必须登录的页面，并且无code请求http://www.sxccmay.com/Vshop/MemberCenter.aspx?ReferralId=0
+---------------
+2018-03-04 20:07:59.266:进入2，检测为匿名用户，并请求授权登录，去获得code参数http://www.sxccmay.com/Vshop/MemberCenter.aspx?ReferralId=0
+---------------

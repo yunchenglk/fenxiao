@@ -1,0 +1,88 @@
+2018-03-17 18:01:29.492:关闭计划任务失败：The Scheduler has been Shutdown.
+---------------
+2018-03-17 18:02:49.157:关闭计划任务失败：The Scheduler has been Shutdown.
+---------------
+2018-03-17 18:03:46.835:关闭计划任务失败：The Scheduler has been Shutdown.
+---------------
+2018-03-17 18:23:50.102:商品规格：False
+---------------
+2018-03-17 18:23:52.790:商品规格：False
+---------------
+2018-03-17 18:24:44.398:关闭计划任务失败：The Scheduler has been Shutdown.
+---------------
+2018-03-17 18:30:00.051:RedPachCheckJob任务出错了:列名 'RedpackId' 无效。
+---------------
+2018-03-17 18:46:08.481:关闭计划任务失败：The Scheduler has been Shutdown.
+---------------
+2018-03-17 19:00:21.861:关闭计划任务失败：The Scheduler has been Shutdown.
+---------------
+2018-03-17 19:29:49.676:关闭计划任务失败：The Scheduler has been Shutdown.
+---------------
+2018-03-17 20:47:31.691:关闭计划任务失败：The Scheduler has been Shutdown.
+---------------
+2018-03-17 20:51:34.497:关闭计划任务失败：The Scheduler has been Shutdown.
+---------------
+2018-03-17 21:21:16.340:关闭计划任务失败：The Scheduler has been Shutdown.
+---------------
+2018-03-17 21:31:48.272:关闭计划任务失败：The Scheduler has been Shutdown.
+---------------
+2018-03-17 21:52:44.928:关闭计划任务失败：The Scheduler has been Shutdown.
+---------------
+2018-03-17 21:52:44.929:关闭计划任务失败：The Scheduler has been Shutdown.
+---------------
+2018-03-17 21:54:55.224:关闭计划任务失败：The Scheduler has been Shutdown.
+---------------
+2018-03-17 21:57:29.533:关闭计划任务失败：The Scheduler has been Shutdown.
+---------------
+2018-03-17 21:59:45.649:关闭计划任务失败：The Scheduler has been Shutdown.
+---------------
+2018-03-17 22:00:57.102:关闭计划任务失败：The Scheduler has been Shutdown.
+---------------
+2018-03-17 22:06:59.095:关闭计划任务失败：The Scheduler has been Shutdown.
+---------------
+2018-03-17 22:10:30.032:关闭计划任务失败：The Scheduler has been Shutdown.
+---------------
+2018-03-17 22:24:06.679:关闭计划任务失败：The Scheduler has been Shutdown.
+---------------
+2018-03-17 22:25:48.806:关闭计划任务失败：The Scheduler has been Shutdown.
+---------------
+2018-03-17 22:26:27.845:关闭计划任务失败：The Scheduler has been Shutdown.
+---------------
+2018-03-17 22:35:43.751:关闭计划任务失败：The Scheduler has been Shutdown.
+---------------
+2018-03-17 22:43:54.367:关闭计划任务失败：The Scheduler has been Shutdown.
+---------------
+2018-03-17 22:47:32.673:关闭计划任务失败：The Scheduler has been Shutdown.
+---------------
+2018-03-17 22:50:05.212:关闭计划任务失败：The Scheduler has been Shutdown.
+---------------
+2018-03-17 22:52:11.133:关闭计划任务失败：The Scheduler has been Shutdown.
+---------------
+2018-03-17 22:52:43.526:关闭计划任务失败：The Scheduler has been Shutdown.
+---------------
+2018-03-17 22:55:56.760:关闭计划任务失败：The Scheduler has been Shutdown.
+---------------
+2018-03-17 22:56:38.916:关闭计划任务失败：The Scheduler has been Shutdown.
+---------------
+2018-03-17 23:01:53.647:关闭计划任务失败：The Scheduler has been Shutdown.
+---------------
+2018-03-17 23:05:18.337:关闭计划任务失败：The Scheduler has been Shutdown.
+---------------
+2018-03-17 23:07:10.388:关闭计划任务失败：The Scheduler has been Shutdown.
+---------------
+2018-03-17 23:11:51.037:关闭计划任务失败：The Scheduler has been Shutdown.
+---------------
+2018-03-17 23:17:51.274:关闭计划任务失败：The Scheduler has been Shutdown.
+---------------
+2018-03-17 23:19:15.113:关闭计划任务失败：The Scheduler has been Shutdown.
+---------------
+2018-03-17 23:23:15.367:关闭计划任务失败：The Scheduler has been Shutdown.
+---------------
+2018-03-17 23:23:43.073:关闭计划任务失败：The Scheduler has been Shutdown.
+---------------
+2018-03-17 23:24:18.599:关闭计划任务失败：The Scheduler has been Shutdown.
+---------------
+2018-03-17 23:28:23.463:关闭计划任务失败：The Scheduler has been Shutdown.
+---------------
+2018-03-17 23:51:59.746:关闭计划任务失败：The Scheduler has been Shutdown.
+---------------

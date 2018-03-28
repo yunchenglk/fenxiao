@@ -1,0 +1,8 @@
+2018-03-03 13:09:20.476:关闭计划任务失败：The Scheduler has been Shutdown.
+---------------
+2018-03-03 13:39:11.558:关闭计划任务失败：The Scheduler has been Shutdown.
+---------------
+2018-03-03 18:30:02.284:RedPachCheckJob任务出错了:列名 'RedpackId' 无效。
+---------------
+2018-03-03 19:12:09.134:关闭计划任务失败：The Scheduler has been Shutdown.
+---------------

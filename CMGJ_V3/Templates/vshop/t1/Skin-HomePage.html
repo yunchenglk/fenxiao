@@ -1,0 +1,97 @@
+﻿<%@ Control Language="C#" %>
+<%@ Register TagPrefix="Hi" Namespace="HiTemplate" Assembly="HiTemplate" %>
+        <div class="members_con" style="margin:0 auto">
+            
+            <section class="members_flash j-swipe" id="mySwipe">
+                <ul class="clearfix">
+                    
+                        
+                            <li>
+                                <a href="/Default.aspx" title="店铺主页">
+                                    
+                                    
+                                    <img src="/Templates/vshop/t1/images/30banner01.jpg" width="100%" />
+                                    
+                                    
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="/Default.aspx" title="店铺主页">
+                                    
+                                    
+                                    <img src="/Templates/vshop/t1/images/30banner01.jpg" width="100%" />
+                                    
+                                    
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="/Default.aspx" title="店铺主页">
+                                    
+                                    
+                                    <img src="/Templates/vshop/t1/images/30banner01.jpg" width="100%" />
+                                    
+                                    
+                                </a>
+                            </li>
+                        
+                    
+                </ul>
+                <section class="members_flash_time">
+                    
+                    
+                    <span class="cur" ></span>
+                    
+                    <span  ></span>
+                    
+                    <span  ></span>
+                    
+                    
+                </section>
+            </section>
+            
+        </div>
+    
+        <div class="members_con"  >
+            <section class="members_nav1">
+                <ul>
+                    
+                    
+                    <li class="lisw2">
+                        <span><a href="/Default.aspx"><img src="/Templates/vshop/t1/images/30nev01.jpg" width="70"></a></span>
+                        <a class="members_nav1_name" href="/Default.aspx"></a>
+                    </li>
+                    
+                    <li class="lisw2">
+                        <span><a href="/Default.aspx"><img src="/Templates/vshop/t1/images/30nev02.jpg" width="70"></a></span>
+                        <a class="members_nav1_name" href="/Default.aspx"></a>
+                    </li>
+                    
+                    
+                </ul>
+            </section>
+        </div>
+    
+        <div class="members_con" style="margin:0 auto">
+            
+            <section class="members_imgad">
+                <ul class="clearfix">
+                    
+                    
+                    <li style="margin-bottom:0px">
+                        <a href="/default.aspx" title="VERO">
+                            
+                            
+                            <img src="/Templates/vshop/t1/images/30banner02.jpg" width="100%" />
+                            
+                            
+                        </a>
+                    </li>
+                    
+                    
+                </ul>
+            </section>
+            
+        </div>
+    <Hi:GoodsListModule runat="server"  Type="goodGroup" Layout="4" ShowName="True" ShowIco="True" ShowPrice="True" DataUrl="/api/Hi_Ajax_GoodsListGroup.ashx" ID="group_525c4fb1c9b04b3eaea2ac5b7c4c4812" TemplateFile="/Admin/shop/Modules/GoodGroup4.cshtml"  GoodListSize="6" FirstPriority=""  SecondPriority="3"  ShowMaketPrice="True"  />

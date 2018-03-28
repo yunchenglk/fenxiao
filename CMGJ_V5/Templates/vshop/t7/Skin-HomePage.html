@@ -1,0 +1,99 @@
+﻿<%@ Control Language="C#" %>
+<%@ Register TagPrefix="Hi" Namespace="HiTemplate" Assembly="HiTemplate" %>
+        <div class="members_con" style="margin:0 auto">
+            
+            <section class="members_flash j-swipe" id="mySwipe">
+                <ul class="clearfix">
+                    
+                        
+                            <li>
+                                <a href="/default.aspx" title="白金早礼">
+                                    
+                                    
+                                    <img src="http://sxccmay.com/Storage/template/20180228/6365544620974492192416539.gif" width="100%" />
+                                    
+                                    
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="/default.aspx" title="白金早礼">
+                                    
+                                    
+                                    <img src="http://sxccmay.com/Storage/template/20180228/6365544620974492192416539.gif" width="100%" />
+                                    
+                                    
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="/default.aspx" title="白金早礼">
+                                    
+                                    
+                                    <img src="http://sxccmay.com/Storage/template/20180228/6365544620974492192416539.gif" width="100%" />
+                                    
+                                    
+                                </a>
+                            </li>
+                        
+                    
+                </ul>
+                <section class="members_flash_time">
+                    
+                    
+                    <span class="cur" ></span>
+                    
+                    <span  ></span>
+                    
+                    <span  ></span>
+                    
+                    
+                </section>
+            </section>
+            
+        </div>
+    
+        <div class="members_con">
+            <section class="members_search">
+                  <form action="/ProductList.aspx" method="get">
+                <input type="text" name="keyWord" id="keyWord" value="" placeholder="商品搜索：请输入商品关键字">
+                <button type="submit"></button>
+           </form>
+            </section>
+        </div>
+    
+        <div class="members_con"  >
+            <section class="members_nav1">
+                <ul>
+                    
+                    
+                    <li class="lisw5">
+                        <span><a href="/ProductList.aspx"><img src="http://sxccmay.com/Storage/template/20180228/6365544626559995209587922.png" width="70"></a></span>
+                        <a class="members_nav1_name" href="/ProductList.aspx">全部商品</a>
+                    </li>
+                    
+                    <li class="lisw5">
+                        <span><a href="/Vshop/MemberRecharge.aspx"><img src="http://sxccmay.com/Storage/template/20180228/6365544626570824394788983.png" width="70"></a></span>
+                        <a class="members_nav1_name" href="/Vshop/MemberRecharge.aspx">充值中心</a>
+                    </li>
+                    
+                    <li class="lisw5">
+                        <span><a href="javascript:zxkf();"><img src="http://sxccmay.com/Storage/template/20180228/6365544626583516917517461.png" width="70"></a></span>
+                        <a class="members_nav1_name" href="javascript:zxkf();">在线客服</a>
+                    </li>
+                    
+                    <li class="lisw5">
+                        <span><a href="/Vshop/DistributorCenter.aspx"><img src="http://sxccmay.com/Storage/template/20180228/6365544626591688268489277.png" width="70"></a></span>
+                        <a class="members_nav1_name" href="/Vshop/DistributorCenter.aspx">团队建设</a>
+                    </li>
+                    
+                    <li class="lisw5">
+                        <span><a href="/Vshop/jinrirenwu.aspx"><img src="http://sxccmay.com/Storage/template/20180228/6365544626600163666231848.png" width="70"></a></span>
+                        <a class="members_nav1_name" href="/Vshop/jinrirenwu.aspx">今日任务</a>
+                    </li>
+                    
+                    
+                </ul>
+            </section>
+        </div>
+    <Hi:GoodsListModule runat="server"  Type="goodGroup" Layout="1" ShowName="True" ShowIco="True" ShowPrice="True" DataUrl="/api/Hi_Ajax_GoodsListGroup.ashx" ID="group_5a5ec566a100411e87e7a9e4bd65b1db" TemplateFile="/Admin/shop/Modules/GoodGroup1.cshtml"  GoodListSize="6" FirstPriority=""  SecondPriority="3"  ShowMaketPrice="True"  />
