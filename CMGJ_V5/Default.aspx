@@ -15,7 +15,7 @@
     <meta name="x5-orientation" content="portrait">
     <title><%=htmlTitleName %></title>
     <meta name="description" content="<%=Server.HtmlEncode(Desc) %>" />
-    <link rel="stylesheet" href="/Admin/Shop/PublicMob/css/dist/style.css?20160816">
+    <link rel="stylesheet" href="/Admin/Shop/PublicMob/css/dist/style.css">
     <link rel="stylesheet" href="/Admin/Shop/PublicMob/css/SpsBtn.css">
     <link rel="stylesheet" href="/Admin/Shop/PublicMob/css/Menu.css">
     <link rel="stylesheet" href="<%=cssSrc %>">
