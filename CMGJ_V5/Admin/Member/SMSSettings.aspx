@@ -18,12 +18,12 @@
         </div>
         <div> 
             <div id="maindiv"  >
-                <div class="form-group">
+                <%--<div class="form-group">
                     <label class="col-xs-2 control-label"></label>
                     <div class="col-xs-6">
                         第一次使用请先<a href="http://sms.kuaidiantong.cn/" target="frammain" >点击这里</a>注册账号获取短信接口的AppKey和AppSecret
                     </div>
-                </div>      
+                </div> --%>     
                 <div class="form-group">
                     <label for="inputEmail4" class="col-xs-2 control-label">Appkey：</label>
                     <div class="col-xs-4">

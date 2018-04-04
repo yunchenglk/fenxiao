@@ -54,12 +54,19 @@ namespace Hidistro.UI.User.API
         {
             string str = context.Request.Form["data"];
             string[] arrs = str.Split(',');
-            string msg = "";
+            string msg = "操作成功";
             if (MemberHelper.CreateDistributorByUserIds(arrs[0].Trim(), ref msg))
             {
                 string orderid = arrs[1].Trim();
                 decimal total = new OrderDao().GetOrderInfo(orderid).GetTotal();
-                if (!db.addDAmount(Int32.Parse(arrs[0].Trim()), total, 120000))
+                if (db.addDAmount(Int32.Parse(arrs[0].Trim()), total, 400000))
+                {
+                    if (!db.setGradeId(Convert.ToInt32(arrs[0].Trim()), 11))
+                    {
+                        context.Response.Write("{\"msg\":\"操作失败\"}");
+                    }
+                }
+                else
                 {
                     context.Response.Write("{\"msg\":\"操作失败\"}");
                 }
@@ -73,6 +80,17 @@ namespace Hidistro.UI.User.API
             string str = context.Request.Form["data"];
             string msg = "操作成功";
             if (!db.zhucesong(Convert.ToInt32(str), 5))
+            {
+                msg = "操作失败";
+            }
+            context.Response.Write("{\"msg\":\"" + msg + "\"}");
+        }
+        //推荐注册送
+        public void tuisong(HttpContext context)
+        {
+            string str = context.Request.Form["uname"];
+            string msg = "操作成功";
+            if (!db.tuisong(str))
             {
                 msg = "操作失败";
             }
@@ -97,6 +115,9 @@ namespace Hidistro.UI.User.API
                     return;
                 case "zhucesongwuyuan":
                     this.zhucesong(context);
+                    return;
+                case "tuisong":
+                    this.tuisong(context);
                     return;
 
             }

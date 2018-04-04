@@ -72,37 +72,37 @@
     <Item ID="hyi02" Title="会员管理" Class="glyphicon ico-huiyuang">
       <PageLink ID="hyp02"  Title="会员列表" Link="member/managemembers.aspx"/>
       <PageLink ID="hyp03"  Title="会员等级" Link="member/membergrades.aspx"/>
-      <PageLink ID="hyp05"  Title="会员分组设置" Link="member/CustomDistributorList.aspx"/>
-      <PageLink ID="hyp10"  Title="会员积分查询" Link="member/MembersIntegralQuery.aspx"/>
+      <!--<PageLink ID="hyp05"  Title="会员分组设置" Link="member/CustomDistributorList.aspx"/>-->
+      <!--<PageLink ID="hyp10"  Title="会员积分查询" Link="member/MembersIntegralQuery.aspx"/>-->
     </Item>
     <Item ID="hyi05" Title="余额管理" Class="glyphicon ico-yongjin">
       <PageLink ID="hyp11"  Title="提现管理" Link="member/MemberAmountApply.aspx"/>
       <PageLink ID="hyp12"  Title="收支明细" Link="member/MemberAmountList.aspx"/>
     </Item>
-    <Item ID="hyi03" Title="会员经验/积分设置" Class="glyphicon ico-huiyuans">
+    <Item ID="hyi03" Title="会员经验" Class="glyphicon ico-huiyuans">
       <PageLink ID="hyp07"  Title="签到送经验" Link="member/setScore_sign.aspx"/>
       <PageLink ID="hyp06"  Title="购物送积分" Link="member/setScore_shopping.aspx"/>
       <!--<PageLink ID="hyp13"  Title="分享送经验" Link="member/setScore_share.aspx"/>-->
     </Item>
-    <Item ID="hyi04" Title="短信发送设置" Class="glyphicon ico-duanxinf">
+    <!--<Item ID="hyi04" Title="短信发送设置" Class="glyphicon ico-duanxinf">
       <PageLink ID="hyp08"  Title="短信发送设置" Link="member/smssettings.aspx"/>
-      <!--<PageLink ID="hyp09"  Title="购买短信套餐" Target="_blank" Link="http://sms.kuaidiantong.cn/SMSPackList.aspx"/>-->
-    </Item>
+      <PageLink ID="hyp09"  Title="购买短信套餐" Target="_blank" Link="http://sms.kuaidiantong.cn/SMSPackList.aspx"/>
+    </Item>-->
   </Module>
   <Module Title="代理" ID="m05"  Link="Fenxiao/DistributorSummary.aspx?firstPage=1">
     <Item ID="fxi01">
       <PageLink ID="fxp01"  Title="代理概况" Link="Fenxiao/DistributorSummary.aspx"/>
-      <PageLink ID="fxp02"  Title="代理设置" Link="Fenxiao/distributorapplyset.aspx"/>
+      <!--<PageLink ID="fxp02"  Title="代理设置" Link="Fenxiao/distributorapplyset.aspx"/>-->
       <PageLink ID="fxp14"  Title="代理中心" Link="Fenxiao/distributorcenter.aspx"/>
       <PageLink ID="fxp13"  Title="掌柜名片设置" Link="Fenxiao/StoreCardSet.aspx"/>
     </Item>
     <Item ID="fxi02" Title="代理商管理" Class="glyphicon ico-fenxiao">
       <PageLink ID="fxp03"  Title="代理商列表" Link="Fenxiao/distributorlist.aspx"/>
-      <PageLink ID="fxp04"  Title="代理商等级" Link="Fenxiao/distributorgradelist.aspx"/>
+      <!--<PageLink ID="fxp04"  Title="代理商等级" Link="Fenxiao/distributorgradelist.aspx"/>-->
       <!--<PageLink ID="fxp12"  Title="代理商升级奖励" Link="Fenxiao/distributorupdateset.aspx"/>-->
-      <PageLink ID="fxp05"  Title="销售排行榜" Link="Fenxiao/DistributorStatistics.aspx"/>
-      <!--<PageLink ID="fxp11"  Title="自定义排行榜" Link="Fenxiao/CustomDistributorStatistics.aspx"/>-->
-      <PageLink ID="fxp07"  Title="批量生成账号" Link="Fenxiao/branchadddistributors.aspx"/>
+      <!--<PageLink ID="fxp05"  Title="销售排行榜" Link="Fenxiao/DistributorStatistics.aspx"/>-->
+      <!--<PageLink ID="fxp11"  Title="自定义排行榜" Link="Fenxiao/CustomDistributorStatistics.aspx"/>
+      <PageLink ID="fxp07"  Title="批量生成账号" Link="Fenxiao/branchadddistributors.aspx"/>-->
     </Item>
     <Item ID="fxi03" Title="佣金管理" Class="glyphicon ico-yongjin">
       <PageLink ID="fxp08"  Title="佣金明细" Link="Fenxiao/CommissionsAllList.aspx"/>

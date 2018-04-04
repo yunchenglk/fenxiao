@@ -168,18 +168,18 @@
 <form id="thisForm" runat="server" class="form-horizontal">
     <input type="hidden" id="urlType"  value="<%=_urlType%>"/>
     <div class="page-header">
-        <h2>会员积分设置</h2>        
+        <h2>会员经验设置</h2>        
     </div>
     <div class="play-tabs">
 
         <ul id="tabHeader" class="nav nav-tabs" role="tablist">
             <li role="presentation" id="signTab"><a href="setScore_sign.aspx">签到送经验</a></li>
-            <li role="presentation" id="shoppingTab" class="active"><a href="setScore_shopping.aspx">购物送积分</a>
+            <li role="presentation" id="shoppingTab" class="active"><a href="setScore_shopping.aspx">购物送经验</a>
             </li>
         </ul>
         <div class="tab-content">
             <div role="tabpanel" class="tab-pane active" id="shoppingScoreDiv">               
-                <div class="form-group">
+                <div class="form-group"style="display:none">
                     <label for="" class="col-xs-2 control-label">是否开启</label>
                     <div class="col-xs-4">
                         <div class="switch" id="mySwitch">
@@ -193,20 +193,20 @@
                             <label for="" class="col-xs-2 control-label">购物成功每</label>
                             <div class="col-xs-6">
                                 <asp:TextBox ID="txt_ShoppingScore" CssClass="form-control" runat="server" style="width:100px;" />
-                                <label style="font-weight: normal; margin-left: 3px;">元，奖励
+                                <label style="font-weight: normal; margin-left: 3px;">元，送
                                     <asp:TextBox ID="txt_ShoppingScoreUnit" CssClass="form-control" runat="server" style="width:100px;" Text="1" />
-                                    积分 （不包含运费）</label> 
+                                    经验</label> 
                             </div>
                         </div>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group" style="display:none">
                         <div class="form-inline">                           
                             <label class="col-xs-2 control-label"><asp:CheckBox runat="server" Checked="true"  ID="chk"/> 单笔订单满</label>
                             <div class="col-xs-6">             
                                 <asp:TextBox ID="txt_OrderValue" CssClass="form-control" runat="server" Width="100" />
-                                <label style="font-weight: normal;margin-left: 3px;">元，奖励</label>
+                                <label style="font-weight: normal;margin-left: 3px;">元，送</label>
                                 <asp:TextBox ID="txt_shopping_RewardScore" CssClass="form-control" runat="server" Width="100" />
-                                <label style="font-weight: normal; margin-left: 3px;">积分</label>
+                                <label style="font-weight: normal; margin-left: 3px;">经验</label>
                             </div>
                         </div>
                     </div>

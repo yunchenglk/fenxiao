@@ -12,8 +12,6 @@
     <link href="/admin/css/bootstrapSwitch.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript">
         $(function () {
-            //alert(Math.random() * 1000000)
-            $("input[abc]").val(parseInt(Math.random() * 1000000));
             $('#aspnetForm').formvalidation({
                 'ctl00$ContentPlaceHolder1$txtRankName': {
                     validators: {
@@ -102,15 +100,14 @@
                 </div>
             </div>
 
-            <div class="form-group" style="margin-left: 5px; margin-bottom: 30px; display: none">
+            <div class="form-group" style="margin-left: 5px; margin-bottom: 30px;">
                 <div style="font-size: 16px;"><span style="color: red; margin-right: 10px; font-weight: 900;">|</span>自动升级 </div>
                 <div class="splitLine"></div>
             </div>
-            <div class="form-group" style="display: none;">
-                <label for="inputEmail1" class="col-xs-2 control-label"><em>*</em>满足交易额：</label>
+            <div class="form-group">
+                <label for="inputEmail1" class="col-xs-2 control-label"><em>*</em>经验满：</label>
                 <div class="col-xs-4">
-                    <asp:TextBox ID="txt_tradeVol" CssClass="form-control inputw150 inl" runat="server" abc="abc" />
-                    元
+                    <asp:TextBox ID="txt_tradeVol" CssClass="form-control inputw150 inl" runat="server" />
                 </div>
             </div>
             <div class="form-group" style="margin-bottom: 5px; margin-top: -10px; display: none;">
@@ -122,11 +119,11 @@
             <div class="form-group" style="display: none;">
                 <label for="inputEmail1" class="col-xs-2 control-label"><em>*</em>满足交易次数：</label>
                 <div class="col-xs-4">
-                    <asp:TextBox ID="txt_tradeTimes" CssClass="form-control inputw150" runat="server" abc="abc" />
+                    <asp:TextBox ID="txt_tradeTimes" CssClass="form-control inputw150" runat="server" />
                 </div>
             </div>
 
-            <div class="form-group" style="display: none;">
+            <div class="form-group">
                 <label for="inputEmail1" class="col-xs-2 control-label">备注：</label>
                 <div class="col-xs-4" style="margin-left: 5px;">
                     <asp:TextBox ID="txtRankDesc" runat="server" TextMode="MultiLine" CssClass="form-group"

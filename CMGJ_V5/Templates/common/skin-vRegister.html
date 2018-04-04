@@ -3,7 +3,7 @@
     <form id="form" role="form" class="clearfix apply">
         <div class="login-name">
             <span class="glyphicon glyphicon-user"></span>
-            <input type="text" class="" id="uesrname" placeholder="请输入用户名" maxlength="50" />
+            <input type="text" class="" id="uesrname" placeholder="请输入手机号" maxlength="50" />
         </div>
         <div class="login-name">
             <span class="glyphicon glyphicon-lock"></span>
@@ -38,6 +38,14 @@
     function UserLogin() {
         location.href = "/UserLogin.aspx?openId=" + getParam("openId") + "&headimgurl=" + getParam("headimgurl") + "&returnUrl=" + encodeURIComponent(getParam("returnUrl"));
     }
+    function isPoneAvailable(str) {
+        var myreg = /^[1][3,4,5,7,8][0-9]{9}$/;
+        if (!myreg.test(str)) {
+            return false;
+        } else {
+            return true;
+        }
+    }
     function RegisterUser() {
         var username = $.trim($("#uesrname").val())
         var password = $.trim($("#pass").val());
@@ -51,7 +59,11 @@
             return;
         }
         if (username == "") {
-            alert_h("用户名不能为空！");
+            alert_h("手机号不能为空！");
+            return;
+        }
+        if (!isPoneAvailable(username)) {
+            alert_h("请正确输入手机号！");
             return;
         }
         if (password == "") {
@@ -71,26 +83,45 @@
                 $(".login-btn").attr("disabled", true);
                 if (resultData.Status == "OK") {
                     var refid = resultData.referralUserId
-                    $.ajax({
-                        url: "/API/CMGJ.ashx",
-                        type: 'post', dataType: 'json', timeout: 10000,
-                        data: { action: "zhucesongwuyuan", "data": refid },
-                        success: function (result) {
-                            alert_h(result.msg, function () {
-                                var returnUrl = getParam("returnUrl");
-                                //if (resultData.ReferralUserId != 0) {
-                                //    if (returnUrl.indexOf("?") > -1) {
-                                //        returnUrl += "&ReferralId=" + resultData.ReferralUserId;
-                                //    }
-                                //    else {
-                                //        returnUrl += "?ReferralId=" + resultData.ReferralUserId;
-                                //    }
-                                //}
-                                location.href = returnUrl;
+                    if (refid > 0) {
+                        $.ajax({
+                            url: "/API/CMGJ.ashx",
+                            type: 'post', dataType: 'json', timeout: 10000,
+                            data: { action: "zhucesongwuyuan", "data": refid },
+                            success: function (result) {
+                                $.ajax({
+                                    url: "/API/CMGJ.ashx",
+                                    type: 'post', dataType: 'json', timeout: 10000,
+                                    data: { action: "tuisong", "uname": $.trim($("#uesrname").val()) },
+                                    success: function (overres) {
+                                        alert_h(overres.msg, function () {
+                                            var returnUrl = getParam("returnUrl");
+                                            location.href = returnUrl;
 
-                            });
-                        }
-                    })
+                                        });
+                                    }
+                                })
+                                //alert_h(result.msg, function () {
+                                //    var returnUrl = getParam("returnUrl");
+                                //    //if (resultData.ReferralUserId != 0) {
+                                //    //    if (returnUrl.indexOf("?") > -1) {
+                                //    //        returnUrl += "&ReferralId=" + resultData.ReferralUserId;
+                                //    //    }
+                                //    //    else {
+                                //    //        returnUrl += "?ReferralId=" + resultData.ReferralUserId;
+                                //    //    }
+                                //    //}
+                                //    location.href = returnUrl;
+
+                                //});
+                            }
+                        })
+                    } else {
+                        alert_h("操作成功", function () {
+                            var returnUrl = getParam("returnUrl")
+                            location.href = returnUrl;
+                        });
+                    }
 
                 }
                 else {

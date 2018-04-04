@@ -56,10 +56,24 @@ namespace Hidistro.User
             DbCommand dbCommand = this.db.GetSqlStringCommand(query);
             return this.db.ExecuteNonQuery(dbCommand) > 0;
         }
+        //直接绑定为大校
+        public bool setGradeId(int mid, int gid)
+        {
+            string query = string.Format("UPDATE aspnet_Members SET GradeId ={0} WHERE UserId = {1}", gid, mid);
+            DbCommand dbCommand = this.db.GetSqlStringCommand(query);
+            return this.db.ExecuteNonQuery(dbCommand) > 0;
+        }
         //注册送
         public bool zhucesong(int mid, decimal amount)
         {
             string query = string.Format("UPDATE aspnet_Members SET TotalAmount = ((SELECT ISNULL(TotalAmount, 0) FROM aspnet_Members WHERE UserId = {0}) + {1}), AvailableAmount = ((SELECT ISNULL(AvailableAmount, 0) FROM aspnet_Members WHERE UserId = {2}  ) +{3}) WHERE UserId = {4}", mid, amount, mid, amount, mid);
+            DbCommand dbCommand = this.db.GetSqlStringCommand(query);
+            return this.db.ExecuteNonQuery(dbCommand) > 0;
+        }
+        //推荐注册互送给新用户
+        public bool tuisong(string uname)
+        {
+            string query = string.Format("UPDATE aspnet_Members SET AvailableAmount = 5 WHERE	UserName = '{0}'", uname);
             DbCommand dbCommand = this.db.GetSqlStringCommand(query);
             return this.db.ExecuteNonQuery(dbCommand) > 0;
         }

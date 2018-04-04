@@ -1,0 +1,93 @@
+2018-04-03 05:04:01.569:关闭计划任务失败：The Scheduler has been Shutdown.
+---------------
+2018-04-03 05:05:00.339:关闭计划任务失败：The Scheduler has been Shutdown.
+---------------
+2018-04-03 05:59:13.983:关闭计划任务失败：The Scheduler has been Shutdown.
+---------------
+2018-04-03 06:08:55.538:关闭计划任务失败：The Scheduler has been Shutdown.
+---------------
+2018-04-03 06:09:39.685:关闭计划任务失败：The Scheduler has been Shutdown.
+---------------
+2018-04-03 06:10:01.031:关闭计划任务失败：The Scheduler has been Shutdown.
+---------------
+2018-04-03 06:34:15.304:关闭计划任务失败：The Scheduler has been Shutdown.
+---------------
+2018-04-03 06:55:56.343:关闭计划任务失败：The Scheduler has been Shutdown.
+---------------
+2018-04-03 07:04:47.067:关闭计划任务失败：The Scheduler has been Shutdown.
+---------------
+2018-04-03 07:09:50.675:关闭计划任务失败：The Scheduler has been Shutdown.
+---------------
+2018-04-03 07:10:33.748:重启动Application_start失败！
+---------------
+2018-04-03 07:11:01.873:关闭计划任务失败：The Scheduler has been Shutdown.
+---------------
+2018-04-03 07:18:13.241:关闭计划任务失败：The Scheduler has been Shutdown.
+---------------
+2018-04-03 07:23:58.601:关闭计划任务失败：The Scheduler has been Shutdown.
+---------------
+2018-04-03 07:25:30.152:关闭计划任务失败：The Scheduler has been Shutdown.
+---------------
+2018-04-03 07:29:36.080:关闭计划任务失败：The Scheduler has been Shutdown.
+---------------
+2018-04-03 07:36:41.548:returnUrl:http://sxccmay.com/API/ExpressReturn.ashx?action=SaveExpressData
+---------------
+2018-04-03 07:36:41.548:{"result":false,"returnCode":"600","message":"POLL:您不是合法的订阅者"}
+---------------
+2018-04-03 07:41:35.209:returnUrl:http://sxccmay.com/API/ExpressReturn.ashx?action=SaveExpressData
+---------------
+2018-04-03 07:41:35.209:{"result":false,"returnCode":"600","message":"POLL:您不是合法的订阅者"}
+---------------
+2018-04-03 07:41:48.877:ReferralId：31718
+
+---------------
+2018-04-03 07:42:01.257:关闭计划任务失败：The Scheduler has been Shutdown.
+---------------
+2018-04-03 07:43:41.168:returnUrl:http://sxccmay.com/API/ExpressReturn.ashx?action=SaveExpressData
+---------------
+2018-04-03 07:43:41.168:{"result":false,"returnCode":"600","message":"POLL:您不是合法的订阅者"}
+---------------
+2018-04-03 07:44:06.396:status：0
+
+---------------
+2018-04-03 07:44:06.396:ReferralId：31719
+
+---------------
+2018-04-03 07:48:34.845:关闭计划任务失败：The Scheduler has been Shutdown.
+---------------
+2018-04-03 07:59:08.179:returnUrl:http://sxccmay.com/API/ExpressReturn.ashx?action=SaveExpressData
+---------------
+2018-04-03 07:59:08.179:{"result":false,"returnCode":"600","message":"POLL:您不是合法的订阅者"}
+---------------
+2018-04-03 08:02:04.066:关闭计划任务失败：The Scheduler has been Shutdown.
+---------------
+2018-04-03 08:04:34.452:returnUrl:http://sxccmay.com/API/ExpressReturn.ashx?action=SaveExpressData
+---------------
+2018-04-03 08:04:34.452:{"result":false,"returnCode":"600","message":"POLL:您不是合法的订阅者"}
+---------------
+2018-04-03 08:13:23.555:ReferralId：31721
+
+---------------
+2018-04-03 08:14:07.975:关闭计划任务失败：The Scheduler has been Shutdown.
+---------------
+2018-04-03 08:16:37.708:returnUrl:http://sxccmay.com/API/ExpressReturn.ashx?action=SaveExpressData
+---------------
+2018-04-03 08:16:37.709:{"result":false,"returnCode":"600","message":"POLL:您不是合法的订阅者"}
+---------------
+2018-04-03 08:17:35.160:关闭计划任务失败：The Scheduler has been Shutdown.
+---------------
+2018-04-03 08:20:40.911:returnUrl:http://sxccmay.com/API/ExpressReturn.ashx?action=SaveExpressData
+---------------
+2018-04-03 08:20:40.912:{"result":false,"returnCode":"600","message":"POLL:您不是合法的订阅者"}
+---------------
+2018-04-03 08:24:48.591:关闭计划任务失败：The Scheduler has been Shutdown.
+---------------
+2018-04-03 08:27:25.015:returnUrl:http://sxccmay.com/API/ExpressReturn.ashx?action=SaveExpressData
+---------------
+2018-04-03 08:27:25.015:{"result":false,"returnCode":"600","message":"POLL:您不是合法的订阅者"}
+---------------
+2018-04-03 08:27:45.037:ReferralId：31724
+
+---------------
+2018-04-03 08:59:23.498:关闭计划任务失败：The Scheduler has been Shutdown.
+---------------

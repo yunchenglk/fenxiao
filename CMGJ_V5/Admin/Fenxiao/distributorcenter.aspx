@@ -59,7 +59,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="page-header">
-        <h2>分销中心</h2>
+        <h2>代理中心</h2>
     </div>
     <div class="clearfix mt50">
 	<div class="phonebox">
@@ -67,7 +67,7 @@
         <div class="dpinfo">
         	<p>天天的小店【初级】</p>
             <p class="change"><span><label data-target="commissionName">佣金</label>金额：¥20.00</span></p>
-            <p><small>再获得<span>180.00</span>元<label data-target="commissionName">佣金</label>升级为<span>中级用户</span></small></p>
+           <%-- <p><small>再获得<span>180.00</span>元<label data-target="commissionName">佣金</label>升级为<span>中级用户</span></small></p>--%>
         </div>
         <ul class="title">
             <li>会员中心</li>
@@ -92,9 +92,9 @@
             <div class="dplist"><i class="icon2"></i><label data-target="fxTeamName">我的下属</label></div>
             <div class="dplist part"><label data-target="shopName">店铺会员</label><p class="num">0</p></div>
             <div class="dplist part"><label data-target="firstShop">一级会员</label><p class="num">0</p></div>
-            <div class="dplist part"><label data-target="secondShop">二级会员</label><p class="num">0</p></div>
+            <%--<div class="dplist part"><label data-target="secondShop">二级会员</label><p class="num">0</p></div>--%>
             <div class="dplist"><i class="icon3"></i><label data-target="myCommission">我的佣金</label></div>
-            <div class="dplist"><i class="icon4"></i><label data-target="fxExplain">店铺说明</label></div>
+            <%--<div class="dplist"><i class="icon4"></i><label data-target="fxExplain">店铺说明</label></div>--%>
         </div>
     </div>
     <div class="editinfo">
@@ -120,18 +120,18 @@
                 <label class="control-label col-xs-5"><em>*</em>一级分店名称</label>
                 <div class="col-xs-7"><input type="text" id="firstShop" class="form-control width120" placeholder="一级分店" maxlength="10" value="<%=FirstShopName %>" /></div>
             </div>
-            <div class="form-group">
+            <%--<div class="form-group">
                 <label class="control-label col-xs-5"><em>*</em>二级分店名称</label>
                 <div class="col-xs-7"><input type="text" id="secondShop" class="form-control width120" placeholder="二级分店" maxlength="10" value="<%=SecondShopName %>" /></div>
-            </div>
+            </div>--%>
             <div class="form-group">
                 <label class="control-label col-xs-5"><em>*</em>我的佣金名称</label>
                 <div class="col-xs-7"><input type="text" id="myCommission" class="form-control width120" placeholder="我的佣金" maxlength="16" value="<%=MyCommissionName %>" /></div>
             </div>
-            <div class="form-group">
+           <%-- <div class="form-group">
                 <label class="control-label col-xs-5"><em>*</em>分销说明名称</label>
                 <div class="col-xs-7"><input type="text" id="fxExplain" class="form-control width120" placeholder="分销说明"  maxlength="16" value="<%=DistributionDescriptionName %>" /></div>
-            </div>
+            </div>--%>
             <div class="form-group mt30">
                 <div class="col-xs-offset-5">
                     <button type="button" class="btn btn-primary width90 fl ml15"  onclick="SavefxCenter()">保存</button>

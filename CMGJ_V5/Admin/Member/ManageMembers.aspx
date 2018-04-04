@@ -236,12 +236,12 @@
                         <ItemTemplate>
                             <input type="hidden" class="actionInput" value="<%# Eval("Status") %>" key="<%# Eval("UserId") %>" />
                             <p>
-                                <a href='<%# Globals.GetAdminAbsolutePath(string.Format("/member/MembershipDetails.aspx?userId={0}", Eval("UserId")))%>'>详情</a> |
+                                <a href='<%# Globals.GetAdminAbsolutePath(string.Format("/member/MembershipDetails.aspx?userId={0}", Eval("UserId")))%>'>&#12288;</a>
                                 <!-- <a href='<%# Globals.GetAdminAbsolutePath(string.Format("/member/EditMember.aspx?userId={0}", Eval("UserId")))%>'>编辑</a>-->
                                  <a href='javascript:void(0);' dataID="<%#Eval("UserId") %>">删除</a>
                             </p>
                             <p><a href="javascript:ShowGradeUser('<%# Eval("UserId") %>','<%# Eval("GradeId") %>')">设置等级</a></p>
-                            <p><a href="javascript:ShowGroupUser('<%# Eval("UserId") %>','<%# Eval("UserBindName") %>')">设置分组</a></p>
+                            <%--<p><a href="javascript:ShowGroupUser('<%# Eval("UserId") %>','<%# Eval("UserBindName") %>')">设置分组</a></p>--%>
                               <p><a href="javascript:SetUserPoint('<%# Eval("UserId") %>','<%# Eval("Points") %>');" >调整经验</a></p>
                             <p><a href="javascript:SetUserAmount('<%# Eval("UserId") %>','<%# Convert.ToDouble ( Eval("AvailableAmount")).ToString ("f2")%>','<%# Eval("UserBindName")%>');" >调整余额</a></p>                               
                             <span class="submit_shanchu" style="display: none">

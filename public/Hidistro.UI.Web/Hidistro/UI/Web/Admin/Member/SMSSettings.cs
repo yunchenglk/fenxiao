@@ -84,7 +84,7 @@
             {
                 this.ShowMsg("接收手机号和发送内容不能为空", false);
             }
-            else if (!Regex.IsMatch(this.txtTestCellPhone.Text.Trim(), @"^(13|14|15|18)\d{9}$"))
+            else if (!Regex.IsMatch(this.txtTestCellPhone.Text.Trim(), @"^(13|14|15|18|17)\d{9}$"))
             {
                 this.ShowMsg("请填写正确的手机号码", false);
             }

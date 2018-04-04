@@ -75,14 +75,14 @@
             });
             $("#SetUserCommission").formvalidation({
                 'submit': '#ctl00_ContentPlaceHolder1_UpdateCommission',  //btnUpdateCommission
-                'ctl00$ContentPlaceHolder1$txtSetCommissionBark': {                           
+                'ctl00$ContentPlaceHolder1$txtSetCommissionBark': {
                     validators: {
                         notEmpty: {
                             message: '备注不能为空！'
                         }
                     }
                 },
-                'ctl00$ContentPlaceHolder1$txtCommission': {                    
+                'ctl00$ContentPlaceHolder1$txtCommission': {
                     validators: {
                         notEmpty: {
                             message: '调整佣金不能为空'
@@ -141,7 +141,7 @@
 
         //修改佣金
         function SetUserCommission(id, Commissio) {
-          
+
             $("#ctl00_ContentPlaceHolder1_txtUserId").val(id);
             $("#ctl00_ContentPlaceHolder1_txtoldCommission").val(Commissio);
             $("#ctl00_ContentPlaceHolder1_lboldCommission").text(Commissio);
@@ -238,11 +238,11 @@
                                 <asp:TextBox ID="txtStoreName" CssClass="form-control resetSize inputw150" runat="server" />
                             </div>
                             <div class="form-group mr20">
-                                <label for="ctl00_ContentPlaceHolder1_txtUserName">　　昵称：</label>
+                                <label for="ctl00_ContentPlaceHolder1_txtUserName">昵称：</label>
                                 <asp:TextBox ID="txtUserName" CssClass="form-control  resetSize  inputw150" runat="server" autocomplete="off" />
                             </div>
                             <div class="form-group mr20">
-                                <label for="ctl00_ContentPlaceHolder1_txtRealName">　　联系人：</label>
+                                <label for="ctl00_ContentPlaceHolder1_txtRealName">联系人：</label>
                                 <asp:TextBox ID="txtRealName" CssClass="form-control  resetSize" runat="server"
                                     Width="150" />
                             </div>
@@ -264,10 +264,10 @@
                                 <label for="ctl00_ContentPlaceHolder1_DrGrade">分销商等级：</label>
                                 <Hi:DistributorGradeDropDownList ID="DrGrade" CssClass="form-control  resetSize inputw150" runat="server" AllowNull="true" NullToDisplay="全部" />
                             </div>
-                            <div class="form-group" style="margin-left:20px">  
+                            <div class="form-group" style="margin-left: 20px">
                                 <asp:Button ID="btnSearchButton" runat="server" Text="查询" CssClass="btn btn-primary  resetSize " />
                             </div>
-                            <div class="form-group mr20">  
+                            <div class="form-group mr20">
                                 <a class="bl mb5" href="distributorlist.aspx" style="cursor: pointer;">清除条件</a>
                             </div>
                         </div>
@@ -296,13 +296,12 @@
                                             <div class="mb10 table-operation">
                                                 <input type="checkbox" id="sells1" class="allselect">
                                                 <label for="sells1">全选</label>
-                                                <asp:Button ID="FrozenCheck" runat="server" Text="批量冻结" CssClass="btn resetSize btn-primary" IsShow="true" OnClientClick="return HiConform('<strong>冻结后分销商不能进入分销管理中心，期间也不会获得佣金。</strong><p>确定要冻结所选的分销商吗？</p>', this);" />
+                                                <asp:Button ID="FrozenCheck" runat="server" Text="批量冻结" Visible="false" CssClass="btn resetSize btn-primary" IsShow="true" OnClientClick="return HiConform('<strong>冻结后分销商不能进入分销管理中心，期间也不会获得佣金。</strong><p>确定要冻结所选的分销商吗？</p>', this);" />
                                                 <%-- <Hi:ImageLinkButton ID="FrozenCheck" class="btn resetSize btn-primary" runat="server" Text="批量冻结" IsShow="true"  DeleteMsg="冻结以后，分销商不能进入分销管理中心，期间也不会获得佣金。确定要冻结所选的分销商吗？"/>--%>
-                                                <button type="button" class="btn resetSize btn-primary " onclick="ShowGrade(this)">批量设置等级</button>
-                                                &nbsp;&nbsp;︱&nbsp;&nbsp;
-                                                <button type="button" class="btn resetSize btn-primary " onclick="ShowPassword(this)">批量设置密码</button>
+                                                <button type="button" class="btn resetSize btn-primary " onclick="ShowGrade(this)"  style="display:none">批量设置等级</button>
+                                                <button type="button" class="btn resetSize btn-primary " onclick="ShowPassword(this)" style="display:none">批量设置密码</button>
                                                 <%-- <Hi:ImageLinkButton ID="CancleCheck" class="btn resetSize btn-primary" runat="server" Text="取消分销资质" IsShow="true"  DeleteMsg="取消分销商资质以后不可恢复也不能重新申请，是否继续？"/>--%>
-                                                <asp:Button ID="CancleCheck" Visible="false" runat="server" Text="取消分销资质" CssClass="btn resetSize btn-primary" IsShow="true" OnClientClick="return HiConform('<strong class=red>取消分销商资质以后不可恢复也不能重新申请。</strong><p>是否继续？</p>', this);" />
+                                                <asp:Button ID="CancleCheck" runat="server" Text="取消分销资质" CssClass="btn resetSize btn-primary" IsShow="true" OnClientClick="return HiConform('<strong class=red>取消分销商资质以后不可恢复也不能重新申请。</strong><p>是否继续？</p>', this);" />
                                                 &nbsp;&nbsp;
                                                 <asp:HyperLink Target="_blank" Visible="false" runat="server" ID="btnDownTaobao" Text="下载淘宝商品" />
                                             </div>
@@ -337,15 +336,16 @@
                                                 <td width="10%"><em>￥<%# Math.Round((decimal)Eval("ReferralBlance")+(decimal)Eval("ReferralRequestBalance"),2) %></em></td>
                                                 <td width="8%"><%#Eval("CreateTime","{0:yyyy-MM-dd<br>HH:mm:ss}") %></td>
                                                 <td width="10%">
-                                                    <p>
-                                                        <a href="DistributorDetails.aspx?UserId=<%#Eval("UserId") %>">详情</a>︱ 
-                                                        <a class="table-icon edit" href="#" onclick="ShowEditDistributorInfos(<%#Eval("UserId") %>,this);" data="<%#  Eval("UserName")%># <%#  Eval("RealName") %># <%#  Eval("CellPhone")%># <%#  Eval("QQ")%>">编辑</a>
-                                                    </p>
+
                                                     <p>
                                                         <a href="CommissionsList.aspx?UserId=<%#Eval("UserId") %>" target="_blank">佣金</a>︱
                                                       <%--  <Hi:ImageLinkButton ID="btnFrozen" CommandName="Frozen" CommandArgument='<%# Eval("UserId")%>' runat="server" Text="冻结" IsShow="true"
                                     DeleteMsg="确定要冻结分销商？" title="冻结以后，分销商不能进入分销管理中心，期间也不会获得佣金。" />--%>
                                                         <asp:Button ID="btnFrozen" CommandName="Frozen" CommandArgument='<%# Eval("UserId")%>' class="btnLink pad" runat="server" Text="冻结" IsShow="true" OnClientClick="return HiConform('<strong>冻结后分销商不能进入分销管理中心，期间也不会获得佣金。</strong><p>确定要冻结该分销商吗？</p>', this);" />
+                                                    </p>
+                                                    <p>
+                                                        <a href="DistributorDetails.aspx?UserId=<%#Eval("UserId") %>" >&#12288;</a>︱
+                                                        <a class="table-icon edit" href="#" onclick="ShowEditDistributorInfos(<%#Eval("UserId") %>,this);" data="<%#  Eval("UserName")%># <%#  Eval("RealName") %># <%#  Eval("CellPhone")%># <%#  Eval("QQ")%>">编辑</a>
                                                     </p>
                                                     <p><a href="javascript:SetUserCommission('<%# Eval("UserId") %>','<%# Math.Round((decimal)Eval("ReferralBlance"),2) %>');">调整佣金</a></p>
                                                     <p>
