@@ -12,5 +12,5 @@
 [assembly: System.Reflection.AssemblyCompany("Microsoft")]
 [assembly: System.Reflection.AssemblyProduct("HiTemplate")]
 [assembly: System.Reflection.AssemblyCopyright("Copyright \x00a9 Microsoft 2015")]
-[assembly: System.Reflection.AssemblyTrademark("")]
+[assembly: System.Reflection.AssemblyTrademark("")] 
 
