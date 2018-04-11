@@ -89,17 +89,17 @@
             object data = result.Data;
             if (data != null)
             {
-                DataTable table = (DataTable) data;
+                DataTable table = (DataTable)data;
                 StringBuilder builder = new StringBuilder();
                 int count = table.Rows.Count;
                 if (count > 0)
                 {
                     table.Rows[0]["State"].ToString();
                     int num5 = 0;
-                    builder.Append("{\"State\":" + table.Rows[num5]["State"].ToString() + ",\"id\":" + table.Rows[num5]["ID"].ToString() + ",\"Amount\":\"" + Globals.String2Json(Math.Round((decimal) table.Rows[num5]["Amount"], 2).ToString()) + "\",\"RequestTime\":\"" + DateTime.Parse(table.Rows[num5]["RequestTime"].ToString()).ToString("yyyy-MM-dd") + "\",\"RequestType\":\"" + VShopHelper.GetCommissionPayType(table.Rows[num5]["RequestType"].ToString()) + "\"}");
+                    builder.Append("{\"State\":" + table.Rows[num5]["State"].ToString() + ",\"id\":" + table.Rows[num5]["ID"].ToString() + ",\"Amount\":\"" + Globals.String2Json(Math.Round((decimal)table.Rows[num5]["Amount"], 2).ToString()) + "\",\"RequestTime\":\"" + DateTime.Parse(table.Rows[num5]["RequestTime"].ToString()).ToString("yyyy-MM-dd") + "\",\"RequestType\":\"" + VShopHelper.GetCommissionPayType(table.Rows[num5]["RequestType"].ToString()) + "\"}");
                     for (num5 = 1; num5 < count; num5++)
                     {
-                        builder.Append(",{\"State\":" + table.Rows[num5]["State"].ToString() + ",\"id\":" + table.Rows[num5]["ID"].ToString() + ",\"Amount\":\"" + Globals.String2Json(Math.Round((decimal) table.Rows[num5]["Amount"], 2).ToString()) + "\",\"RequestTime\":\"" + DateTime.Parse(table.Rows[num5]["RequestTime"].ToString()).ToString("yyyy-MM-dd") + "\",\"RequestType\":\"" + VShopHelper.GetCommissionPayType(table.Rows[num5]["RequestType"].ToString()) + "\"}");
+                        builder.Append(",{\"State\":" + table.Rows[num5]["State"].ToString() + ",\"id\":" + table.Rows[num5]["ID"].ToString() + ",\"Amount\":\"" + Globals.String2Json(Math.Round((decimal)table.Rows[num5]["Amount"], 2).ToString()) + "\",\"RequestTime\":\"" + DateTime.Parse(table.Rows[num5]["RequestTime"].ToString()).ToString("yyyy-MM-dd") + "\",\"RequestType\":\"" + VShopHelper.GetCommissionPayType(table.Rows[num5]["RequestType"].ToString()) + "\"}");
                     }
                 }
                 s = string.Concat(new object[] { "{\"success\":\"true\",\"rowtotal\":\"", table.Rows.Count, "\",\"total\":\"", result.TotalRecords, "\",\"lihtml\":[", builder.ToString(), "]}" });
@@ -127,7 +127,7 @@
                 applyInfo.UserName = currentMember.UserName;
                 applyInfo.RequestTime = DateTime.Now;
                 applyInfo.Amount = num;
-                applyInfo.RequestType = (RequesType) result;
+                applyInfo.RequestType = (RequesType)result;
                 applyInfo.AccountCode = str2;
                 switch (result)
                 {
@@ -210,7 +210,8 @@
                 }
                 else
                 {
-                    MemberAmountDetailedInfo amountinfo = new MemberAmountDetailedInfo {
+                    MemberAmountDetailedInfo amountinfo = new MemberAmountDetailedInfo
+                    {
                         UserId = currentMember.UserId,
                         UserName = currentMember.UserName,
                         PayId = Globals.GetGenerateId(),
@@ -258,7 +259,7 @@
             object data = result.Data;
             if (data != null)
             {
-                DataTable table = (DataTable) data;
+                DataTable table = (DataTable)data;
                 StringBuilder builder = new StringBuilder();
                 int count = table.Rows.Count;
                 string str2 = string.Empty;
@@ -266,11 +267,11 @@
                 {
                     str2 = Math.Round(decimal.Parse(table.Rows[0]["TradeAmount"].ToString()), 2).ToString();
                     int num6 = 0;
-                    builder.Append("{\"id\":" + table.Rows[num6]["ID"].ToString() + ",\"AvailableAmount\":\"" + Globals.String2Json(Math.Round((decimal) table.Rows[num6]["AvailableAmount"], 2).ToString()) + "\",\"TradeTime\":\"" + DateTime.Parse(table.Rows[num6]["TradeTime"].ToString()).ToString("yyyy-MM-dd") + "\",\"TradeAmount\":\"" + str2 + "\",\"TradeType\":\"" + MemberHelper.StringToTradeType(table.Rows[num6]["TradeType"].ToString()) + "\"}");
+                    builder.Append("{\"id\":" + table.Rows[num6]["ID"].ToString() + ",\"AvailableAmount\":\"" + Globals.String2Json(Math.Round((decimal)table.Rows[num6]["AvailableAmount"], 2).ToString()) + "\",\"TradeTime\":\"" + DateTime.Parse(table.Rows[num6]["TradeTime"].ToString()).ToString("yyyy-MM-dd") + "\",\"TradeAmount\":\"" + str2 + "\",\"TradeType\":\"" + MemberHelper.StringToTradeType(table.Rows[num6]["TradeType"].ToString()) + "\"}");
                     for (num6 = 1; num6 < count; num6++)
                     {
                         str2 = Math.Round(decimal.Parse(table.Rows[num6]["TradeAmount"].ToString()), 2).ToString();
-                        builder.Append(",{\"id\":" + table.Rows[num6]["ID"].ToString() + ",\"AvailableAmount\":\"" + Globals.String2Json(Math.Round((decimal) table.Rows[num6]["AvailableAmount"], 2).ToString()) + "\",\"TradeTime\":\"" + DateTime.Parse(table.Rows[num6]["TradeTime"].ToString()).ToString("yyyy-MM-dd") + "\",\"TradeAmount\":\"" + str2 + "\",\"TradeType\":\"" + MemberHelper.StringToTradeType(table.Rows[num6]["TradeType"].ToString()) + "\"}");
+                        builder.Append(",{\"id\":" + table.Rows[num6]["ID"].ToString() + ",\"AvailableAmount\":\"" + Globals.String2Json(Math.Round((decimal)table.Rows[num6]["AvailableAmount"], 2).ToString()) + "\",\"TradeTime\":\"" + DateTime.Parse(table.Rows[num6]["TradeTime"].ToString()).ToString("yyyy-MM-dd") + "\",\"TradeAmount\":\"" + str2 + "\",\"TradeType\":\"" + MemberHelper.StringToTradeType(table.Rows[num6]["TradeType"].ToString()) + "\"}");
                     }
                 }
                 s = string.Concat(new object[] { "{\"success\":\"true\",\"rowtotal\":\"", table.Rows.Count, "\",\"total\":\"", result.TotalRecords, "\",\"lihtml\":[", builder.ToString(), "]}" });
@@ -300,74 +301,75 @@
             switch (num2)
             {
                 case 0:
-                {
-                    MemberDetailOrderQuery query = new MemberDetailOrderQuery {
-                        UserId = new int?(member.UserId)
-                    };
-                    query.Status = new OrderStatus[] { OrderStatus.Finished, OrderStatus.BuyerAlreadyPaid, OrderStatus.SellerAlreadySent };
-                    if (!string.IsNullOrEmpty(str2))
                     {
-                        query.StartFinishDate = new DateTime?(Convert.ToDateTime(str2));
-                    }
-                    if (!string.IsNullOrEmpty(str3))
-                    {
-                        query.EndFinishDate = new DateTime?(Convert.ToDateTime(str3));
-                    }
-                    query.PageIndex = page;
-                    query.PageSize = pagesize;
-                    query.SortBy = "OrderDate";
-                    query.SortOrder = SortAction.Desc;
-                    DbQueryResult memberDetailOrders = OrderHelper.GetMemberDetailOrders(query);
-                    object data = memberDetailOrders.Data;
-                    if (data != null)
-                    {
-                        DataTable table = (DataTable) data;
-                        StringBuilder builder = new StringBuilder();
-                        int count = table.Rows.Count;
-                        string str4 = "-";
-                        string str5 = "-";
-                        if (count > 0)
+                        MemberDetailOrderQuery query = new MemberDetailOrderQuery
                         {
-                            int num6 = 0;
-                            str4 = !table.Rows[num6].IsNull(table.Columns["GatewayOrderId"]) ? table.Rows[num6]["GatewayOrderId"].ToString() : "-";
-                            str5 = (table.Rows[num6]["FinishDate"] != DBNull.Value) ? DateTime.Parse(table.Rows[num6]["FinishDate"].ToString()).ToString("yyyy-MM-dd") : "-";
-                            builder.Append("{\"GatewayOrderId\":\"" + str4 + "\",\"OrderTotal\":\"" + Globals.String2Json(Math.Round((decimal) table.Rows[num6]["OrderTotal"], 2).ToString()) + "\",\"OrderDate\":\"" + str5 + "\",\"PaymentType\":\"" + table.Rows[num6]["PaymentType"].ToString() + "\",\"OrderId\":\"" + table.Rows[num6]["OrderId"].ToString() + "\",\"ShipTo\":\"" + table.Rows[num6]["ShipTo"].ToString() + "\",\"Remark\":\"" + table.Rows[num6]["Remark"].ToString() + "\"}");
-                            for (num6 = 1; num6 < count; num6++)
+                            UserId = new int?(member.UserId)
+                        };
+                        query.Status = new OrderStatus[] { OrderStatus.Finished, OrderStatus.BuyerAlreadyPaid, OrderStatus.SellerAlreadySent };
+                        if (!string.IsNullOrEmpty(str2))
+                        {
+                            query.StartFinishDate = new DateTime?(Convert.ToDateTime(str2));
+                        }
+                        if (!string.IsNullOrEmpty(str3))
+                        {
+                            query.EndFinishDate = new DateTime?(Convert.ToDateTime(str3));
+                        }
+                        query.PageIndex = page;
+                        query.PageSize = pagesize;
+                        query.SortBy = "OrderDate";
+                        query.SortOrder = SortAction.Desc;
+                        DbQueryResult memberDetailOrders = OrderHelper.GetMemberDetailOrders(query);
+                        object data = memberDetailOrders.Data;
+                        if (data != null)
+                        {
+                            DataTable table = (DataTable)data;
+                            StringBuilder builder = new StringBuilder();
+                            int count = table.Rows.Count;
+                            string str4 = "-";
+                            string str5 = "-";
+                            if (count > 0)
                             {
+                                int num6 = 0;
                                 str4 = !table.Rows[num6].IsNull(table.Columns["GatewayOrderId"]) ? table.Rows[num6]["GatewayOrderId"].ToString() : "-";
                                 str5 = (table.Rows[num6]["FinishDate"] != DBNull.Value) ? DateTime.Parse(table.Rows[num6]["FinishDate"].ToString()).ToString("yyyy-MM-dd") : "-";
-                                builder.Append(",{\"GatewayOrderId\":\"" + str4 + "\",\"OrderTotal\":\"" + Globals.String2Json(Math.Round((decimal) table.Rows[num6]["OrderTotal"], 2).ToString()) + "\",\"OrderDate\":\"" + str5 + "\",\"PaymentType\":\"" + table.Rows[num6]["PaymentType"].ToString() + "\",\"OrderId\":\"" + table.Rows[num6]["OrderId"].ToString() + "\",\"ShipTo\":\"" + table.Rows[num6]["ShipTo"].ToString() + "\",\"Remark\":\"" + table.Rows[num6]["Remark"].ToString() + "\"}");
+                                builder.Append("{\"GatewayOrderId\":\"" + str4 + "\",\"OrderTotal\":\"" + Globals.String2Json(Math.Round((decimal)table.Rows[num6]["OrderTotal"], 2).ToString()) + "\",\"OrderDate\":\"" + str5 + "\",\"PaymentType\":\"" + table.Rows[num6]["PaymentType"].ToString() + "\",\"OrderId\":\"" + table.Rows[num6]["OrderId"].ToString() + "\",\"ShipTo\":\"" + table.Rows[num6]["ShipTo"].ToString() + "\",\"Remark\":\"" + table.Rows[num6]["Remark"].ToString() + "\"}");
+                                for (num6 = 1; num6 < count; num6++)
+                                {
+                                    str4 = !table.Rows[num6].IsNull(table.Columns["GatewayOrderId"]) ? table.Rows[num6]["GatewayOrderId"].ToString() : "-";
+                                    str5 = (table.Rows[num6]["FinishDate"] != DBNull.Value) ? DateTime.Parse(table.Rows[num6]["FinishDate"].ToString()).ToString("yyyy-MM-dd") : "-";
+                                    builder.Append(",{\"GatewayOrderId\":\"" + str4 + "\",\"OrderTotal\":\"" + Globals.String2Json(Math.Round((decimal)table.Rows[num6]["OrderTotal"], 2).ToString()) + "\",\"OrderDate\":\"" + str5 + "\",\"PaymentType\":\"" + table.Rows[num6]["PaymentType"].ToString() + "\",\"OrderId\":\"" + table.Rows[num6]["OrderId"].ToString() + "\",\"ShipTo\":\"" + table.Rows[num6]["ShipTo"].ToString() + "\",\"Remark\":\"" + table.Rows[num6]["Remark"].ToString() + "\"}");
+                                }
                             }
+                            s = string.Concat(new object[] { "{\"success\":\"true\",\"rowtotal\":\"", table.Rows.Count, "\",\"total\":\"", memberDetailOrders.TotalRecords, "\",\"lihtml\":[", builder.ToString(), "]}" });
                         }
-                        s = string.Concat(new object[] { "{\"success\":\"true\",\"rowtotal\":\"", table.Rows.Count, "\",\"total\":\"", memberDetailOrders.TotalRecords, "\",\"lihtml\":[", builder.ToString(), "]}" });
+                        break;
                     }
-                    break;
-                }
                 case 1:
-                {
-                    DbQueryResult result2 = MemberAmountProcessor.GetAmountListRequestByTime(0, page, pagesize, member.UserId, str2, str3);
-                    object obj3 = result2.Data;
-                    if (obj3 != null)
                     {
-                        DataTable table2 = (DataTable) obj3;
-                        StringBuilder builder2 = new StringBuilder();
-                        int num7 = table2.Rows.Count;
-                        string str6 = string.Empty;
-                        if (num7 > 0)
+                        DbQueryResult result2 = MemberAmountProcessor.GetAmountListRequestByTime(0, page, pagesize, member.UserId, str2, str3);
+                        object obj3 = result2.Data;
+                        if (obj3 != null)
                         {
-                            int num9 = 0;
-                            str6 = Math.Round(decimal.Parse(table2.Rows[num9]["TradeAmount"].ToString()), 2).ToString();
-                            builder2.Append("{\"id\":" + table2.Rows[num9]["ID"].ToString() + ",\"AvailableAmount\":\"" + Globals.String2Json(Math.Round((decimal) table2.Rows[num9]["AvailableAmount"], 2).ToString()) + "\",\"TradeTime\":\"" + DateTime.Parse(table2.Rows[num9]["TradeTime"].ToString()).ToString("yyyy-MM-dd") + "\",\"TradeAmount\":\"" + str6 + "\",\"TradeType\":\"" + MemberHelper.StringToTradeType(table2.Rows[num9]["TradeType"].ToString()) + "\",\"PayId\":\"" + table2.Rows[num9]["PayId"].ToString() + "\",\"TradeWays\":\"" + MemberHelper.StringToTradeWays(table2.Rows[num9]["TradeWays"].ToString()) + "\",\"Remark\":\"" + table2.Rows[num9]["Remark"].ToString() + "\"}");
-                            for (num9 = 1; num9 < num7; num9++)
+                            DataTable table2 = (DataTable)obj3;
+                            StringBuilder builder2 = new StringBuilder();
+                            int num7 = table2.Rows.Count;
+                            string str6 = string.Empty;
+                            if (num7 > 0)
                             {
+                                int num9 = 0;
                                 str6 = Math.Round(decimal.Parse(table2.Rows[num9]["TradeAmount"].ToString()), 2).ToString();
-                                builder2.Append(",{\"id\":" + table2.Rows[num9]["ID"].ToString() + ",\"AvailableAmount\":\"" + Globals.String2Json(Math.Round((decimal) table2.Rows[num9]["AvailableAmount"], 2).ToString()) + "\",\"TradeTime\":\"" + DateTime.Parse(table2.Rows[num9]["TradeTime"].ToString()).ToString("yyyy-MM-dd") + "\",\"TradeAmount\":\"" + str6 + "\",\"TradeType\":\"" + MemberHelper.StringToTradeType(table2.Rows[num9]["TradeType"].ToString()) + "\",\"PayId\":\"" + table2.Rows[num9]["PayId"].ToString() + "\",\"TradeWays\":\"" + MemberHelper.StringToTradeWays(table2.Rows[num9]["TradeWays"].ToString()) + "\",\"Remark\":\"" + table2.Rows[num9]["Remark"].ToString() + "\"}");
+                                builder2.Append("{\"id\":" + table2.Rows[num9]["ID"].ToString() + ",\"AvailableAmount\":\"" + Globals.String2Json(Math.Round((decimal)table2.Rows[num9]["AvailableAmount"], 2).ToString()) + "\",\"TradeTime\":\"" + DateTime.Parse(table2.Rows[num9]["TradeTime"].ToString()).ToString("yyyy-MM-dd") + "\",\"TradeAmount\":\"" + str6 + "\",\"TradeType\":\"" + MemberHelper.StringToTradeType(table2.Rows[num9]["TradeType"].ToString()) + "\",\"PayId\":\"" + table2.Rows[num9]["PayId"].ToString() + "\",\"TradeWays\":\"" + MemberHelper.StringToTradeWays(table2.Rows[num9]["TradeWays"].ToString()) + "\",\"Remark\":\"" + table2.Rows[num9]["Remark"].ToString() + "\"}");
+                                for (num9 = 1; num9 < num7; num9++)
+                                {
+                                    str6 = Math.Round(decimal.Parse(table2.Rows[num9]["TradeAmount"].ToString()), 2).ToString();
+                                    builder2.Append(",{\"id\":" + table2.Rows[num9]["ID"].ToString() + ",\"AvailableAmount\":\"" + Globals.String2Json(Math.Round((decimal)table2.Rows[num9]["AvailableAmount"], 2).ToString()) + "\",\"TradeTime\":\"" + DateTime.Parse(table2.Rows[num9]["TradeTime"].ToString()).ToString("yyyy-MM-dd") + "\",\"TradeAmount\":\"" + str6 + "\",\"TradeType\":\"" + MemberHelper.StringToTradeType(table2.Rows[num9]["TradeType"].ToString()) + "\",\"PayId\":\"" + table2.Rows[num9]["PayId"].ToString() + "\",\"TradeWays\":\"" + MemberHelper.StringToTradeWays(table2.Rows[num9]["TradeWays"].ToString()) + "\",\"Remark\":\"" + table2.Rows[num9]["Remark"].ToString() + "\"}");
+                                }
                             }
+                            s = string.Concat(new object[] { "{\"success\":\"true\",\"rowtotal\":\"", table2.Rows.Count, "\",\"total\":\"", result2.TotalRecords, "\",\"lihtml\":[", builder2.ToString(), "]}" });
                         }
-                        s = string.Concat(new object[] { "{\"success\":\"true\",\"rowtotal\":\"", table2.Rows.Count, "\",\"total\":\"", result2.TotalRecords, "\",\"lihtml\":[", builder2.ToString(), "]}" });
+                        break;
                     }
-                    break;
-                }
             }
             context.Response.Write(s);
             context.Response.End();
@@ -404,6 +406,9 @@
                 case "SetUserAmountByAdmin":
                     this.ProcessUserAmountByAdmin(context);
                     return;
+                case "SetUserDAmountByAdmin":
+                    this.ProcessUserDAmountByAdmin(context);
+                    return;
             }
         }
 
@@ -434,7 +439,8 @@
                 }
                 else
                 {
-                    MemberAmountDetailedInfo amountInfo = new MemberAmountDetailedInfo {
+                    MemberAmountDetailedInfo amountInfo = new MemberAmountDetailedInfo
+                    {
                         UserId = currentMember.UserId,
                         UserName = currentMember.UserName,
                         PayId = generateId,
@@ -489,7 +495,8 @@
             string s = "{\"success\":\"false\"}";
             decimal num2 = decimal.Parse(context.Request["setAmount"]);
             string str2 = context.Request["remark"];
-            MemberAmountDetailedInfo model = new MemberAmountDetailedInfo {
+            MemberAmountDetailedInfo model = new MemberAmountDetailedInfo
+            {
                 UserId = userId,
                 UserName = member.UserName,
                 PayId = Globals.GetGenerateId(),
@@ -502,6 +509,20 @@
                 Remark = str2
             };
             if (MemberAmountProcessor.SetAmountByShopAdjustment(model))
+            {
+                s = "{\"success\":\"true\"}";
+            }
+            context.Response.Write(s);
+            context.Response.End();
+        }
+        private void ProcessUserDAmountByAdmin(HttpContext context)
+        {
+            context.Response.ContentType = "application/json";
+            int userId = Globals.RequestFormNum("userid");
+            decimal num2 = decimal.Parse(context.Request["setDAmount"]);
+            Util.Utils.WriteLogs(userId + "///" + num2);
+            string s = "{\"success\":\"false\"}";
+            if (MemberAmountProcessor.SetDAmount(num2, userId))
             {
                 s = "{\"success\":\"true\"}";
             }

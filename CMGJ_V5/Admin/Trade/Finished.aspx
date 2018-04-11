@@ -155,9 +155,15 @@
                                 <div class="listTitle" v="<%#Eval("OrderId") %>">
                                     <label>
                                         <input name="CheckBoxGroup" type="checkbox" value='<%#Eval("OrderId") %>' />
-                                        订单编号：<%#Eval("OrderId") %><%#Globals.GetBarginShow(Eval("BargainDetialId")) %><asp:Literal
-                                            ID="group" runat="server" Text='<%#  Eval("GroupBuyId")!=DBNull.Value&& Convert.ToInt32(Eval("GroupBuyId"))>0?"(团)":"" %>' /></label>&nbsp;<span><Hi:FormatedTimeLabel ID="lblStartTimes" Time='<%#Eval("OrderDate") %>' ShopTime="true"
-                                                runat="server"></Hi:FormatedTimeLabel></span>
+                                        订单编号：<%#Eval("OrderId") %><%#Globals.GetBarginShow(Eval("BargainDetialId")) %>
+
+
+                                        <asp:Literal
+                                            ID="group" runat="server" Text='<%#  Eval("GroupBuyId")!=DBNull.Value&& Convert.ToInt32(Eval("GroupBuyId"))>0?"(团)":"" %>' />
+                                    </label>
+                                    &nbsp;<span><Hi:FormatedTimeLabel ID="lblStartTimes" Time='<%#Eval("OrderDate") %>' ShopTime="true"
+                                        runat="server"></Hi:FormatedTimeLabel></span>
+                                    <div mid></div>
                                     <span style="margin-left: 40px;">
                                         <asp:Literal ID="WeiXinNickName" runat="server"></asp:Literal>
                                         <%-- <Hi:OrderStatusLabel ID="lblOrderStatus" OrderStatusCode='<%# Eval("OrderStatus") %>'
@@ -884,9 +890,8 @@
             });
             //生成升级按钮
             $("div[mid]").each(function () {
-                var id = $.trim($(this).html());
-                $(this).replaceWith('<input type="button" style="margin:0 10px;" value="一键升级" onclick="shengji(\'' + id + ',' + $(this).parent().parent().attr('v') + '\');" class="btn btn-primary resetSize">')
-                //alert(id);
+                var orderid = $(this).parent().attr('v');
+                $(this).replaceWith('<input type="button" style="margin:0 10px;" value="一键升级" onclick="shengji(' + orderid + ');" class="btn btn-primary resetSize">')
             });
         });
         function shengji(data) {

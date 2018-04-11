@@ -142,11 +142,11 @@
         <ul class="nav nav-tabs" role="tablist">
             <li role="presentation"><a href="BalancePayment.aspx">账户余额支付</a></li>
             <li role="presentation"><a href="WeixinPay.aspx">微信支付</a></li>
-            <li role="presentation"><a href="Alipay.aspx">支付宝</a></li>
+            <%--<li role="presentation"><a href="Alipay.aspx">支付宝</a></li>--%>
             <%--<li role="presentation" ><a href="ChinaBank.aspx">网银在线</a></li>--%>
-            <li role="presentation"><a href="ShengPay.aspx">盛付通</a></li>
+            <%--<li role="presentation"><a href="ShengPay.aspx">盛付通</a></li>--%>
             <li role="presentation" class="active"><a href="OfflinePay.aspx">线下支付</a></li>
-            <li role="presentation"><a href="COD.aspx">货到付款</a></li>
+            <%--<li role="presentation"><a href="COD.aspx">货到付款</a></li>--%>
         </ul>
         <div>
             <div class="set-switch">

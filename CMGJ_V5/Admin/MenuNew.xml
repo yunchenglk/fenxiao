@@ -3,24 +3,24 @@
   <Module Title="店铺" IsDivide="true" ID="m01" Link="Default.aspx?firstPage=1">
     <Item ID="dpi01">
       <PageLink ID="dpp01"  Title="店铺概况" Link="Default.aspx"/>
-      <PageLink ID="dpp12"  Title="店铺设置" Link="shop/Setting.aspx"/>
+      <!--<PageLink ID="dpp12"  Title="店铺设置" Link="shop/Setting.aspx"/>-->
     </Item>
     <Item ID="dpi02" Title="店铺管理" Class="glyphicon ico-dianp">
       <PageLink ID="dpp02"  Title="店铺信息" Link="shop/Config.aspx"/>
-      <PageLink ID="dpp03"  Title="店铺主页" Link="shop/ShopIndex.aspx"/>
-      <PageLink ID="dpp13"  Title="自定义页面" Link="shop/CustomPageManage.aspx"/>
+      <!--<PageLink ID="dpp03"  Title="店铺主页" Link="shop/ShopIndex.aspx"/>-->
+      <!--<PageLink ID="dpp13"  Title="自定义页面" Link="shop/CustomPageManage.aspx"/>-->
       <PageLink ID="dpp04" Title="店铺导航" Link="shop/ShopMenu.aspx"/>
-      <PageLink ID="dpp05" Title="在线客服" Link="shop/saleservice.aspx"/>
-      <PageLink ID="dpp11" Title="消息公告" Link="shop/NoticeList.aspx"/>
+      <!--<PageLink ID="dpp05" Title="在线客服" Link="shop/saleservice.aspx"/>-->
+      <!--<PageLink ID="dpp11" Title="消息公告" Link="shop/NoticeList.aspx"/>-->
     </Item>
     <Item ID="dpi03">
-      <PageLink ID="dpp06"  Title="素材管理" Link="shop/Articles.aspx"/>
+      <!--<PageLink ID="dpp06"  Title="素材管理" Link="shop/Articles.aspx"/>-->
       <!--<PageLink ID="dpp10"  Title="九图一文" Link="shop/ManageNineImages.aspx"/>-->
     </Item>
-    <Item ID="dpi04" Title="图库管理" Class="glyphicon ico-tupian">
+    <!--<Item ID="dpi04" Title="图库管理" Class="glyphicon ico-tupian">
       <PageLink ID="dpp07"  Title="图片库" Link="shop/imagedata.aspx"/>
       <PageLink ID="dpp09"  Title="图片分组" Link="shop/imagetype.aspx"/>
-    </Item>
+    </Item>-->
   </Module>
   <Module Title="商品" ID="m02" Link="goods/productonsales.aspx?firstPage=1">
     <Item ID="spi01">
@@ -92,17 +92,17 @@
   <Module Title="代理" ID="m05"  Link="Fenxiao/DistributorSummary.aspx?firstPage=1">
     <Item ID="fxi01">
       <PageLink ID="fxp01"  Title="代理概况" Link="Fenxiao/DistributorSummary.aspx"/>
-      <!--<PageLink ID="fxp02"  Title="代理设置" Link="Fenxiao/distributorapplyset.aspx"/>-->
+      <!--<PageLink ID="fxp02"  Title="代理设置" Link="Fenxiao/distributorapplyset.aspx"/>
       <PageLink ID="fxp14"  Title="代理中心" Link="Fenxiao/distributorcenter.aspx"/>
-      <PageLink ID="fxp13"  Title="掌柜名片设置" Link="Fenxiao/StoreCardSet.aspx"/>
+      <PageLink ID="fxp13"  Title="掌柜名片设置" Link="Fenxiao/StoreCardSet.aspx"/>-->
     </Item>
     <Item ID="fxi02" Title="代理商管理" Class="glyphicon ico-fenxiao">
       <PageLink ID="fxp03"  Title="代理商列表" Link="Fenxiao/distributorlist.aspx"/>
-      <!--<PageLink ID="fxp04"  Title="代理商等级" Link="Fenxiao/distributorgradelist.aspx"/>-->
-      <!--<PageLink ID="fxp12"  Title="代理商升级奖励" Link="Fenxiao/distributorupdateset.aspx"/>-->
-      <!--<PageLink ID="fxp05"  Title="销售排行榜" Link="Fenxiao/DistributorStatistics.aspx"/>-->
-      <!--<PageLink ID="fxp11"  Title="自定义排行榜" Link="Fenxiao/CustomDistributorStatistics.aspx"/>
-      <PageLink ID="fxp07"  Title="批量生成账号" Link="Fenxiao/branchadddistributors.aspx"/>-->
+      <PageLink ID="fxp04"  Title="代理商等级" Link="Fenxiao/distributorgradelist.aspx"/>
+      <PageLink ID="fxp12"  Title="代理商升级奖励" Link="Fenxiao/distributorupdateset.aspx"/>
+      <PageLink ID="fxp05"  Title="销售排行榜" Link="Fenxiao/DistributorStatistics.aspx"/>
+      <PageLink ID="fxp11"  Title="自定义排行榜" Link="Fenxiao/CustomDistributorStatistics.aspx"/>
+      <PageLink ID="fxp07"  Title="批量生成账号" Link="Fenxiao/branchadddistributors.aspx"/>
     </Item>
     <Item ID="fxi03" Title="佣金管理" Class="glyphicon ico-yongjin">
       <PageLink ID="fxp08"  Title="佣金明细" Link="Fenxiao/CommissionsAllList.aspx"/>
@@ -128,10 +128,10 @@
   <Module Title="设置" IsDivide="true" ID="m09" Link="Settings/Alipay.aspx?firstPage=1">
     <Item ID="szi01" Title="设置收款账号" Class="glyphicon ico-zhifu">
       <PageLink ID="szp15"  Title="账户余额" Link="Settings/BalancePayment.aspx"/>
-      <PageLink ID="szp01"  Title="支付宝" Link="Settings/Alipay.aspx"/>
-      <PageLink ID="szp03"  Title="盛付通" Link="Settings/ShengPay.aspx"/>
-      <PageLink ID="szp04"  Title="线下支付" Link="Settings/OfflinePay.aspx"/>
-      <PageLink ID="szp05"  Title="货到付款" Link="Settings/COD.aspx"/>
+      <!--<PageLink ID="szp01"  Title="支付宝" Link="Settings/Alipay.aspx"/>-->
+      <!--<PageLink ID="szp03"  Title="盛付通" Link="Settings/ShengPay.aspx"/>-->
+      <!--<PageLink ID="szp04"  Title="线下支付" Link="Settings/OfflinePay.aspx"/>-->
+      <!--<PageLink ID="szp05"  Title="货到付款" Link="Settings/COD.aspx"/>-->
     </Item>
     <Item ID="szi05">
       <PageLink ID="szp16"  Title="提现设置" Link="Fenxiao/BalanceDrawRequestSet.aspx"/>

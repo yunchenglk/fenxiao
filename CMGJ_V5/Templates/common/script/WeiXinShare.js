@@ -1,11 +1,10 @@
-﻿function WinXinShareMessage(title,desc,link,imgUrl) {
+﻿function WinXinShareMessage(title, desc, link, imgUrl) {
     wx.ready(function () {
-
-        
+        //alert(link + "|" + title + "|" + imgUrl);
         //分享给朋友
         wx.onMenuShareAppMessage({
             title: title,
-            desc:unescape(desc),
+            desc: unescape(desc),
             link: link,
             imgUrl: imgUrl,
             trigger: function (res) {
@@ -13,6 +12,7 @@
                 //alert('用户点击发送给朋友');
             },
             success: function (res) {
+                alert("分享成功" + link)
                 //alert('已分享');
             },
             cancel: function (res) {
@@ -32,10 +32,10 @@
                 // alert('用户点击分享到朋友圈');
             },
             success: function (res) {
-                
+
             },
             cancel: function (res) {
-               
+
             },
             fail: function (res) {
                 alert(JSON.stringify(res));
@@ -89,7 +89,7 @@ function getStrbylen(str, len) {
         }
     }
     if (str.length > strlen) {
-        newstr = str.substr(0, strlen)+"...";
+        newstr = str.substr(0, strlen) + "...";
     } else {
         newstr = str;
     }

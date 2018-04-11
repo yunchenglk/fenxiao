@@ -1,8 +1,8 @@
 ﻿namespace Hidistro.UI.Web.API
 {
     using Aop.Api.Response;
-   using  global:: ControlPanel.Promotions;
-    using  global:: ControlPanel.WeiXin;
+    using global::ControlPanel.Promotions;
+    using global::ControlPanel.WeiXin;
     using Hidistro.ControlPanel.Bargain;
     using Hidistro.ControlPanel.CashBack;
     using Hidistro.ControlPanel.Commodities;
@@ -38,6 +38,7 @@
     using Hishop.Weixin.MP.Api;
     using Newtonsoft.Json;
     using Newtonsoft.Json.Linq;
+    using SqlDal.Members;
     using System;
     using System.Collections.Generic;
     using System.Data;
@@ -3624,6 +3625,7 @@
                 {
                     order.logisticsTools = LogisticsTools.Kuaidiniao;
                 }
+                //MemberInfo member = new MemberDao().GetMember(32823);
                 int num17 = ShoppingProcessor.CreatOrder(order, isUseBalance, remainingMondy);
                 if (num17 > 0)
                 {

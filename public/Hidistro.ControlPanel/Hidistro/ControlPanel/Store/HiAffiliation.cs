@@ -57,11 +57,11 @@
                     userId = Globals.RequestQueryNum("ReferralId");
                     if (userId > 0)
                     {
-                        if (DistributorsBrower.GetCurrentDistributors(userId, true) == null)
-                        {
-                            SetReferralIdCookie("0", "", false);
-                            return "/Default.aspx?ReferralId=0";
-                        }
+                        //if (DistributorsBrower.GetCurrentDistributors(userId, true) == null)
+                        //{
+                        //    SetReferralIdCookie("0", "", false);
+                        //    return "/Default.aspx?ReferralId=0";
+                        //}
                         HttpCookie cookie = HttpContext.Current.Request.Cookies["Vshop-ReferralId"];
                         if (cookie == null)
                         {

@@ -47,30 +47,30 @@
 
         protected override void AttachChildControls()
         {
-            this.litShipTo = (Literal) this.FindControl("litShipTo");
-            this.litIsUseBalance = (Literal) this.FindControl("litIsUseBalance");
-            this.litCellPhone = (Literal) this.FindControl("litCellPhone");
-            this.litAddress = (Literal) this.FindControl("litAddress");
-            this.litShowMes = (Literal) this.FindControl("litShowMes");
+            this.litShipTo = (Literal)this.FindControl("litShipTo");
+            this.litIsUseBalance = (Literal)this.FindControl("litIsUseBalance");
+            this.litCellPhone = (Literal)this.FindControl("litCellPhone");
+            this.litAddress = (Literal)this.FindControl("litAddress");
+            this.litShowMes = (Literal)this.FindControl("litShowMes");
             this.GetUserCoupons = MemberProcessor.GetUserCoupons();
-            this.rptCartProducts = (VshopTemplatedRepeater) this.FindControl("rptCartProducts");
+            this.rptCartProducts = (VshopTemplatedRepeater)this.FindControl("rptCartProducts");
             this.rptCartProducts.ItemDataBound += new RepeaterItemEventHandler(this.rptCartProducts_ItemDataBound);
-            this.litOrderTotal = (Literal) this.FindControl("litOrderTotal");
-            this.litPointNumber = (Literal) this.FindControl("litPointNumber");
-            this.litUseMembersPointShow = (Literal) this.FindControl("litUseMembersPointShow");
-            this.litDisplayPointNumber = (Literal) this.FindControl("litDisplayPointNumber");
-            this.litDisplayPoint = (Literal) this.FindControl("litDisplayPoint");
-            this.BalanceCanPayMoney = (HtmlInputHidden) this.FindControl("BalanceCanPayMoney");
-            this.groupbuyHiddenBox = (HtmlInputControl) this.FindControl("groupbuyHiddenBox");
-            this.rptAddress = (VshopTemplatedRepeater) this.FindControl("rptAddress");
-            this.selectShipTo = (HtmlInputHidden) this.FindControl("selectShipTo");
-            this.MembersPointMoney = (HtmlInputHidden) this.FindControl("MembersPointMoney");
-            this.regionId = (HtmlInputHidden) this.FindControl("regionId");
-            this.litAddAddress = (Literal) this.FindControl("litAddAddress");
+            this.litOrderTotal = (Literal)this.FindControl("litOrderTotal");
+            this.litPointNumber = (Literal)this.FindControl("litPointNumber");
+            this.litUseMembersPointShow = (Literal)this.FindControl("litUseMembersPointShow");
+            this.litDisplayPointNumber = (Literal)this.FindControl("litDisplayPointNumber");
+            this.litDisplayPoint = (Literal)this.FindControl("litDisplayPoint");
+            this.BalanceCanPayMoney = (HtmlInputHidden)this.FindControl("BalanceCanPayMoney");
+            this.groupbuyHiddenBox = (HtmlInputControl)this.FindControl("groupbuyHiddenBox");
+            this.rptAddress = (VshopTemplatedRepeater)this.FindControl("rptAddress");
+            this.selectShipTo = (HtmlInputHidden)this.FindControl("selectShipTo");
+            this.MembersPointMoney = (HtmlInputHidden)this.FindControl("MembersPointMoney");
+            this.regionId = (HtmlInputHidden)this.FindControl("regionId");
+            this.litAddAddress = (Literal)this.FindControl("litAddAddress");
             IList<ShippingAddressInfo> shippingAddresses = MemberProcessor.GetShippingAddresses();
             this.rptAddress.DataSource = from item in shippingAddresses
-                orderby item.IsDefault
-                select item;
+                                         orderby item.IsDefault
+                                         select item;
             this.rptAddress.DataBind();
             ShippingAddressInfo info = shippingAddresses.FirstOrDefault<ShippingAddressInfo>(item => item.IsDefault);
             if (info == null)
@@ -196,7 +196,7 @@
                         if (num11 > (masterSettings.PonitToCash_MaxAmount * masterSettings.PointToCashRate))
                         {
                             num12 = masterSettings.PonitToCash_MaxAmount;
-                            num11 = ((int) masterSettings.PonitToCash_MaxAmount) * masterSettings.PointToCashRate;
+                            num11 = ((int)masterSettings.PonitToCash_MaxAmount) * masterSettings.PointToCashRate;
                         }
                         else
                         {
@@ -211,7 +211,7 @@
                             num12 = d;
                         }
                         num12 = decimal.Round(num12, 2);
-                        num11 = (int) (num12 * masterSettings.PointToCashRate);
+                        num11 = (int)(num12 * masterSettings.PointToCashRate);
                     }
                     if (num11 <= 0)
                     {
@@ -238,9 +238,9 @@
                         availableAmount = d;
                         this.BalanceCanPayMoney.Value = d.ToString("F2");
                     }
-                    if ((base.CurrentMemberInfo.AvailableAmount > 0M) && masterSettings.EnableBalancePayment)
+                    if (((base.CurrentMemberInfo.AvailableAmount + base.CurrentMemberInfo.DAmount) > 0M) && masterSettings.EnableBalancePayment)
                     {
-                        this.litIsUseBalance.Text = "<div class=\"prompt-text pull-left\">余额支付 <span class=\"colorr\">\x00a5<span id=\"spCanpayMoney\">" + availableAmount.ToString("F2") + "</span></span>(可用 \x00a5<span id=\"spAvailableAmount\">" + base.CurrentMemberInfo.AvailableAmount.ToString("F2") + "</span>)</div><div class=\"switch pull-right\" id=\"mySwitchUseBalance\"><input type=\"checkbox\" " + ((availableAmount > 0M) ? "" : " disabled") + " /></div></div>";
+                        this.litIsUseBalance.Text = "<div class=\"prompt-text pull-left\">余额支付 <span class=\"colorr\">\x00a5<span id=\"spCanpayMoney\">" + (base.CurrentMemberInfo.AvailableAmount + base.CurrentMemberInfo.DAmount) + "</span></span>(可用 \x00a5<span id=\"spAvailableAmount\">" + (base.CurrentMemberInfo.AvailableAmount + base.CurrentMemberInfo.DAmount).ToString("F2") + "</span>)</div><div class=\"switch pull-right\" id=\"mySwitchUseBalance\"><input type=\"checkbox\" " + ((availableAmount > 0M) ? "" : " disabled") + " /></div></div>";
                     }
                     else
                     {
@@ -398,13 +398,13 @@
         {
             if ((e.Item.ItemType == ListItemType.Item) || (e.Item.ItemType == ListItemType.AlternatingItem))
             {
-                List<ShoppingCartItemInfo> list = (List<ShoppingCartItemInfo>) DataBinder.Eval(e.Item.DataItem, "LineItems");
-                Literal literal = (Literal) e.Item.Controls[0].FindControl("LitCoupon");
-                Literal literal2 = (Literal) e.Item.Controls[0].FindControl("litExemption");
-                Literal literal3 = (Literal) e.Item.Controls[0].FindControl("litoldExemption");
-                Literal literal4 = (Literal) e.Item.Controls[0].FindControl("litoldTotal");
-                Literal literal5 = (Literal) e.Item.Controls[0].FindControl("litTotal");
-                Literal literal6 = (Literal) e.Item.Controls[0].FindControl("litbFreeShipping");
+                List<ShoppingCartItemInfo> list = (List<ShoppingCartItemInfo>)DataBinder.Eval(e.Item.DataItem, "LineItems");
+                Literal literal = (Literal)e.Item.Controls[0].FindControl("LitCoupon");
+                Literal literal2 = (Literal)e.Item.Controls[0].FindControl("litExemption");
+                Literal literal3 = (Literal)e.Item.Controls[0].FindControl("litoldExemption");
+                Literal literal4 = (Literal)e.Item.Controls[0].FindControl("litoldTotal");
+                Literal literal5 = (Literal)e.Item.Controls[0].FindControl("litTotal");
+                Literal literal6 = (Literal)e.Item.Controls[0].FindControl("litbFreeShipping");
                 string str = "";
                 string str2 = " <div class=\"btn-group coupon\">";
                 object obj2 = str2;
@@ -434,8 +434,8 @@
                                 if (decimal.Parse(this.GetUserCoupons.Rows[i]["ConditionValue"].ToString()) <= num2)
                                 {
                                     object obj5 = str;
-                                    str = string.Concat(new object[] { 
-                                        obj5, "<li><a onclick=\"Couponasetselect('", DataBinder.Eval(e.Item.DataItem, "TemplateId"), "','", this.GetUserCoupons.Rows[i]["CouponValue"], "元现金券','", this.GetUserCoupons.Rows[i]["CouponValue"], "',", this.GetUserCoupons.Rows[i]["Id"], ",'", this.GetUserCoupons.Rows[i]["CouponValue"], "元现金券|", this.GetUserCoupons.Rows[i]["Id"], "|", this.GetUserCoupons.Rows[i]["ConditionValue"], "|", 
+                                    str = string.Concat(new object[] {
+                                        obj5, "<li><a onclick=\"Couponasetselect('", DataBinder.Eval(e.Item.DataItem, "TemplateId"), "','", this.GetUserCoupons.Rows[i]["CouponValue"], "元现金券','", this.GetUserCoupons.Rows[i]["CouponValue"], "',", this.GetUserCoupons.Rows[i]["Id"], ",'", this.GetUserCoupons.Rows[i]["CouponValue"], "元现金券|", this.GetUserCoupons.Rows[i]["Id"], "|", this.GetUserCoupons.Rows[i]["ConditionValue"], "|",
                                         this.GetUserCoupons.Rows[i]["CouponValue"], "')\" id=\"acoupon", DataBinder.Eval(e.Item.DataItem, "TemplateId"), this.GetUserCoupons.Rows[i]["Id"], "\" value=\"", this.GetUserCoupons.Rows[i]["Id"], "\">", this.GetUserCoupons.Rows[i]["CouponValue"], "元现金券</a></li>"
                                      });
                                 }
@@ -455,8 +455,8 @@
                                 if (flag && (decimal.Parse(this.GetUserCoupons.Rows[i]["ConditionValue"].ToString()) <= num3))
                                 {
                                     object obj6 = str;
-                                    str = string.Concat(new object[] { 
-                                        obj6, "<li><a onclick=\"Couponasetselect('", DataBinder.Eval(e.Item.DataItem, "TemplateId"), "','", this.GetUserCoupons.Rows[i]["CouponValue"], "元现金券','", this.GetUserCoupons.Rows[i]["CouponValue"], "',", this.GetUserCoupons.Rows[i]["Id"], ",'", this.GetUserCoupons.Rows[i]["CouponValue"], "元现金券|", this.GetUserCoupons.Rows[i]["Id"], "|", this.GetUserCoupons.Rows[i]["ConditionValue"], "|", 
+                                    str = string.Concat(new object[] {
+                                        obj6, "<li><a onclick=\"Couponasetselect('", DataBinder.Eval(e.Item.DataItem, "TemplateId"), "','", this.GetUserCoupons.Rows[i]["CouponValue"], "元现金券','", this.GetUserCoupons.Rows[i]["CouponValue"], "',", this.GetUserCoupons.Rows[i]["Id"], ",'", this.GetUserCoupons.Rows[i]["CouponValue"], "元现金券|", this.GetUserCoupons.Rows[i]["Id"], "|", this.GetUserCoupons.Rows[i]["ConditionValue"], "|",
                                         this.GetUserCoupons.Rows[i]["CouponValue"], "')\" id=\"acoupon", DataBinder.Eval(e.Item.DataItem, "TemplateId"), this.GetUserCoupons.Rows[i]["Id"], "\" value=\"", this.GetUserCoupons.Rows[i]["Id"], "\">", this.GetUserCoupons.Rows[i]["CouponValue"], "元现金券</a></li>"
                                      });
                                 }

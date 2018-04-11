@@ -134,6 +134,10 @@
     <Reference Include="System.XML" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Hidistro.Util\Hidistro.Util.csproj">
+      <Project>{7db8fc71-af81-4c96-9485-f6c7e8b542da}</Project>
+      <Name>Hidistro.Util</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Hidistro.Core\Hidistro.Core.csproj">
       <Project>{cb569a65-e158-4fbd-9479-1428df0d880d}</Project>
       <Name>Hidistro.Core</Name>

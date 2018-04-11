@@ -1,9 +1,0 @@
-2018-03-21 10:58:53.338:ReferralId：28069
-
----------------
-2018-03-21 11:00:24.541:returnUrl:http://sxccmay.com/API/ExpressReturn.ashx?action=SaveExpressData
----------------
-2018-03-21 11:00:24.541:{"result":false,"returnCode":"600","message":"POLL:您不是合法的订阅者"}
----------------
-2018-03-21 11:33:16.209:关闭计划任务失败：The Scheduler has been Shutdown.
----------------

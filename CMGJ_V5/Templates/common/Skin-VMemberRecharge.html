@@ -1,20 +1,19 @@
-﻿<hi:common_header runat="server"/>
+﻿<hi:common_header runat="server" />
 <div class="nav-box mb10 selectPaymentType">
     <div class="payway" show="yes">选择支付方式</div>
-    <asp:literal runat="server" id="litPaymentType"/>
-    <input type="hidden" runat="server" clientidmode="Static" id="selectPaymentType"/>
+    <asp:literal runat="server" id="litPaymentType" />
+    <input type="hidden" runat="server" clientidmode="Static" id="selectPaymentType" />
 </div>
 <div class="nav-box radius mb10 mt20 clearfix distable">
     <label class="form-label">金额</label>
-    <input class="form-input" type="text" placeholder="请输入充值金额" maxlength="8"  onkeyup="this.value = (this.value.match(/\d+(\.\d{0,2})?/) || [''])[0]" />
+    <input class="form-input" type="text" placeholder="请输入充值金额" maxlength="8" onkeyup="this.value = (this.value.match(/\d+(\.\d{0,2})?/) || [''])[0]" />
 </div>
 <div class="pad10 mt100">
     <input type="button" class="btn btn-danger font16 btn-block" value="下一步" />
 </div>
 <script type="text/javascript">
-    $(function() {
-        if($(".selectPaymentType div.payway[name]").length > 0)
-        {
+    $(function () {
+        if ($(".selectPaymentType div.payway[name]").length > 0) {
             $(".selectPaymentType div.payway[name]").css({ "display": "none", "background-color": "#f5f5f5" });
             var text = $(".selectPaymentType div.payway[name]:first").html();
             $(".selectPaymentType div.payway[show='yes']").html(text);
@@ -53,9 +52,9 @@
             return false;
         };
 
-        $(".btn-danger").click(function() {
+        $(".btn-danger").click(function () {
             var amount = $(".form-input").val();
-            if (!checkMoney(amount)||amount<=0) {
+            if (!checkMoney(amount) || amount <= 0) {
                 alert_h("请输入正确充值金额！");
                 return;
             }
@@ -64,7 +63,7 @@
                 alert_h("最大充值金额不超过100万！");
                 return;
             }
-            if ($('#selectPaymentType').val()=="") {
+            if ($('#selectPaymentType').val() == "") {
                 alert_h("请先选择支付方式！");
                 return;
             }
@@ -79,9 +78,18 @@
                 success: function (resultData) {
                     //maskayer(1);
                     if (resultData.Status == "OK") {
-
-                        //if (resultData.OrderMarkingStatus=="0")
-                        location.href = "/Vshop/FinishRecharge.aspx?PayId=" + resultData.PayId;
+                        var PayId = resultData.PayId
+                        //充值送经验
+                        $.ajax({
+                            url: "/API/CMGJ.ashx",
+                            type: 'post', dataType: 'json', timeout: 10000,
+                            data: { action: "chongzhisong", payid: PayId },
+                            success: function (resultData) {
+                                location.href = "/Vshop/FinishRecharge.aspx?PayId=" + PayId;
+                            }
+                        });
+                        //if (resultData.OrderMarkingStatus=="0");
+                        //location.href = "/Vshop/FinishRecharge.aspx?PayId=" + resultData.PayId;
                     }
                     else if (resultData.ErrorMsg) {
 
@@ -97,5 +105,5 @@
     })
 </script>
 
-<hi:common_footer runat="server"/>
+<hi:common_footer runat="server" />
 

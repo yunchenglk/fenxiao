@@ -69,6 +69,19 @@
 
         var pagesize = 5;
         $(function () {
+            //获取绑定金额
+            //getBanddingjine
+            var userId = $("#hiduserid").val();
+            $.ajax({
+                url: "/api/CMGJ.ashx",
+                type: "post",
+                timeout: 10000,
+                data: "action=getBanddingjine&mid=" + userId,
+                datatype: "json",
+                success: function (json) {
+                    $("#ctl00_ContentPlaceHolder1_ReferralBlance").html(json);
+                }
+            });
 
             $("#SetUserAmount").formvalidation({
                 'submit': '#btnUpdateAmount',
@@ -100,7 +113,7 @@
             GetTableHtml(0, 1);
 
             //tab切换
-            $("#mytabl .table-page .nav-tabs li").click(function() {
+            $("#mytabl .table-page .nav-tabs li").click(function () {
 
                 if ($(this).hasClass("active")) {
                     return;
@@ -129,7 +142,7 @@
         //    var endTime = $("#hidend").val();
         //    var pageNo = pageindex;
         //    GetTableHtml(tabIndex,  pageindex);
-     
+
         //}
 
 
@@ -155,7 +168,7 @@
                 $(".table").html(amountthead);
             }
             var html = "";
-            var data = "action=GetMemberAmountDetails&pagesize=" + pagesize + "&type=" + tabIndex + "&page=" + pageindex + "&startTime=" + startTime + "&endTime=" + endTime + "&userid="+userid+"&t=" + (new Date()).getTime();
+            var data = "action=GetMemberAmountDetails&pagesize=" + pagesize + "&type=" + tabIndex + "&page=" + pageindex + "&startTime=" + startTime + "&endTime=" + endTime + "&userid=" + userid + "&t=" + (new Date()).getTime();
             $.ajax({
                 url: "/api/VshopRecharge.ashx",
                 type: "post",
@@ -166,7 +179,7 @@
                         $(".page").hide();
                         return;
                     }
-                    if (json.success=="true") {
+                    if (json.success == "true") {
                         if (parseInt(json.total) <= 0) {
                             $(".page").hide();
                             return;
@@ -193,9 +206,9 @@
                                     amountShow = "<td>- ￥" + (temp * -1).toFixed(2) + "</td>";
                                 }
 
-                                var xhtml = "<tr class=\"td_bg\"><td>" + jsonData[i].PayId + "</td>"+amountShow+"<td>￥" + jsonData[i].AvailableAmount + "</td><td>" + jsonData[i].TradeType + "</td><td>" + jsonData[i].TradeWays + "</td><td>" + jsonData[i].TradeTime + "</td><td>" + jsonData[i].Remark + "</td></tr>";
+                                var xhtml = "<tr class=\"td_bg\"><td>" + jsonData[i].PayId + "</td>" + amountShow + "<td>￥" + jsonData[i].AvailableAmount + "</td><td>" + jsonData[i].TradeType + "</td><td>" + jsonData[i].TradeWays + "</td><td>" + jsonData[i].TradeTime + "</td><td>" + jsonData[i].Remark + "</td></tr>";
                                 html += xhtml;
-                            }                                                                                  
+                            }
                         }
                         html += "</tbody>";
                         $(".table").append(html);
@@ -214,7 +227,7 @@
                             totalRecords: totalRecords,
                             mode: 'click',//默认值是link，可选link或者click
                             click: function (n) {
-                                GetTableHtml(tabIndex,  n);
+                                GetTableHtml(tabIndex, n);
                                 //alert(n);
                                 // do something
                                 //手动选中按钮
@@ -244,7 +257,7 @@
                                 buttonTipBeforeText		: '第',
                                 buttonTipAfterText		: '页'
                             }*/
-                        },true);
+                        }, true);
                         //kkpager.selectPage(pageindex);
 
                     }
@@ -256,6 +269,7 @@
 
         //修改余额
         function SetUserAmount() {
+
             $("#lbNowAmount").text("￥" + $("#ctl00_ContentPlaceHolder1_TotalReferral").text());
             $("#txtTitle").text("调整账户余额-" + $("#ctl00_ContentPlaceHolder1_txtUserName").text());
             $('#SetUserAmount').modal('toggle').children().css({
@@ -294,7 +308,7 @@
                     type: "post",
                     data: data,
                     datatype: "json",
-                    success: function(json) {
+                    success: function (json) {
                         if (json.success == "true") {
                             //$(this).attr("disabled", false);
                             $(obj).removeAttr("disabled");
@@ -311,7 +325,62 @@
 
             });
         }
+        //修改绑定账户
+        function SetUserDAmount() {
+            $("#lbNowDAmount").text("￥" + $("#ctl00_ContentPlaceHolder1_ReferralBlance").text());
+            $("#txtDTitle").text("调整账户余额-" + $("#ctl00_ContentPlaceHolder1_txtUserName").text());
+            $('#SetUserDAmount').modal('toggle').children().css({
+                width: '450px', top: "170px"
+            });
+            $("#txtDAmount").val("");
+            $("#txtSetDAmountBark").val("");
+            $("#btnUpdateDAmount").unbind('click').bind('click', function () {
+                var setDAmount = $("#txtDAmount").val();
+                if (!parseFloat(setDAmount)) {
+                    ShowMsg("调整金额输入不合法", false);
+                    return false;
+                }
+                if (parseFloat(setDAmount) == 0) {
+                    ShowMsg("调整余额不能为0", false);
+                    return false;
+                }
+                var obj = this;
+                $(this).attr("disabled", "disabled");
 
+                var remark = $("#txtSetDAmountBark").val();
+                var userId = $("#hiduserid").val();
+                if (remark.trim() === "") {
+                    ShowMsg("调整备注不能为空", false);
+                    return false;
+                }
+                if (parseFloat(setDAmount) + parseFloat($("#ctl00_ContentPlaceHolder1_TotalReferral").text()) < 0) {
+                    ShowMsg("减去余额不能大于当前余额!", false);
+                    return false;
+                }
+                var tempUrl = location.href;
+                var data = "action=SetUserDAmountByAdmin&userid=" + userId + "&setDAmount=" + setDAmount + "&t=" + (new Date()).getTime();
+                $.ajax({
+                    url: "/api/VshopRecharge.ashx",
+                    type: "post",
+                    data: data,
+                    datatype: "json",
+                    success: function (json) {
+                        if (json.success == "true") {
+                            //$(this).attr("disabled", false);
+                            $(obj).removeAttr("disabled");
+                            $('#SetUserDAmount').modal('hide');
+                            ShowMsgAndReUrl("调整成功", true, tempUrl, null);
+                        } else {
+                            //$(this).attr("disabled", false);
+
+                            $(obj).removeAttr("disabled");
+                            ShowMsg("调整失败", false);
+                        }
+                    }
+                });
+
+            });
+        }
     </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -382,22 +451,28 @@
             </div>
 
             <div class="yejiItem">
-                <div class="money" style="cursor: pointer;" onclick="SetUserAmount()">￥<span id="TotalReferral" runat="server">0</span>
-                    <span style="margin-left:5px;"><img src="../images/edit07.png" height="25" width="20" /></span>
+                <div class="money" style="cursor: pointer;" onclick="SetUserAmount()">
+                    ￥<span id="TotalReferral" runat="server">0</span>
+                    <span style="margin-left: 5px;">
+                        <img src="../images/edit07.png" height="25" width="20" /></span>
                 </div>
                 <div class="yejitxt">账户余额</div>
             </div>
 
             <div class="yejiItem">
-                <div class="money">￥<span id="ReferralBlance" runat="server">0</span></div>
-                <div class="yejitxt">冻结金额</div>
+                <div class="money" style="cursor: pointer;" onclick="SetUserDAmount()">
+                    ￥<span id="ReferralBlance" runat="server">0</span>
+                    <span style="margin-left: 5px;">
+                        <img src="../images/edit07.png" height="25" width="20" /></span>
+                </div>
+                <div class="yejitxt">绑定账户金额</div>
             </div>
 
         </div>
 
         <!--数据列表-->
-        <h3 class="templateTitle">消费明细</h3>
-        <div id="mytabl">
+        <h3 class="templateTitle" style="display:none">消费明细</h3>
+        <div id="mytabl" style="display:none">
             <div class="table-page">
                 <ul class="nav nav-tabs">
                     <li class="active">
@@ -406,27 +481,27 @@
                 </ul>
             </div>
             <div class="tab-content">
-                 <div class="tab-pane active">
-                    
-                        <div class="form-inline mb10">
-                            <div class="form-group mr20">
-                                <label for="sellshop1">　交易时间：</label>
-                                <Hi:DateTimePicker CalendarType="StartDate" ID="calendarStartDate" runat="server" CssClass="form-control resetSize inputw150" />
-                                ~
+                <div class="tab-pane active">
+
+                    <div class="form-inline mb10">
+                        <div class="form-group mr20">
+                            <label for="sellshop1">交易时间：</label>
+                            <Hi:DateTimePicker CalendarType="StartDate" ID="calendarStartDate" runat="server" CssClass="form-control resetSize inputw150" />
+                            ~
                                 <Hi:DateTimePicker ID="calendarEndDate" runat="server" CalendarType="EndDate" CssClass="form-control resetSize inputw150" />
-                                <input type="hidden" id="hidstart" />
-                                 <input type="hidden" id="hidend" />
-                                <input type="hidden" id="hiduserid" value="<%=userid %>"/>
-                                <%--<asp:Button ID="btnSearchButton" runat="server" class="btn resetSize btn-primary" Text="查询"  />--%>
-                                <a href="javascript:void(0);" class="btn resetSize btn-primary" id="btnSearchButton">查询</a>
-                            </div>
-                            </div>
-                        
-                     </div>
+                            <input type="hidden" id="hidstart" />
+                            <input type="hidden" id="hidend" />
+                            <input type="hidden" id="hiduserid" value="<%=userid %>" />
+                            <%--<asp:Button ID="btnSearchButton" runat="server" class="btn resetSize btn-primary" Text="查询"  />--%>
+                            <a href="javascript:void(0);" class="btn resetSize btn-primary" id="btnSearchButton">查询</a>
+                        </div>
+                    </div>
+
+                </div>
             </div>
         </div>
 
-        <div>
+        <div style="display:none">
             <table class="table table-hover mar table-bordered" style="table-layout: fixed">
                 <%--<thead>
                     <tr>
@@ -464,13 +539,13 @@
 
         <!--数据列表底部功能区域-->
         <br />
-        <div class="select-page clearfix">
+        <div class="select-page clearfix" style="display:none">
             <div class="form-horizontal fl">
                 <a onclick="javascript:history.go(-1)" class="btn btn-primary">返回</a>
             </div>
             <div class="page fr">
                 <div class="pageNumber">
-                    <div class="pagination" style="margin-right: 30px;margin-top:0;">
+                    <div class="pagination" style="margin-right: 30px; margin-top: 0;">
                         <div id="kkpager"></div>
                         <%--<UI:Pager runat="server" ShowTotalPages="true" DefaultPageSize="5" TotalRecords="30" ID="pager" />--%>
                     </div>
@@ -480,43 +555,81 @@
 
         <div class="clearfix" style="height: 130px" id="footer"></div>
 
-        
+
         <%--  调整余额--%>
-         <div class="modal fade" id="SetUserAmount">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" style="text-align:left" id="txtTitle">调整账户余额</h4>
-              </div>
-                <div class="modal-body form-horizontal" >
-                    <div class="form-group">
-                                <label for="inputEmail3" class="col-xs-4 control-label">账户余额：</label>
-                                <div class="col-xs-6">
-                                    <label id="lbNowAmount" style="margin-top:7px;display:block">0</label>
-                                </div>
+        <div class="modal fade" id="SetUserAmount">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" style="text-align: left" id="txtTitle">调整账户余额</h4>
+                    </div>
+                    <div class="modal-body form-horizontal">
+                        <div class="form-group">
+                            <label for="inputEmail3" class="col-xs-4 control-label">账户余额：</label>
+                            <div class="col-xs-6">
+                                <label id="lbNowAmount" style="margin-top: 7px; display: block">0</label>
+                            </div>
                         </div>
-                     <div class="form-group">
-                                <label for="inputEmail3" class="col-xs-4 control-label"><em>*</em>调整金额：</label>
-                                <div class="col-xs-6">
-                                    <input type="text" name="txtAmount" id="txtAmount" style="width:200px;" maxlength="9" onkeyup="this.value = (this.value.match(/^[\+\-]?\d*?\.?\d{0,2}?$/) || [''])[0]" placeholder="0.00"/>
-                                    <span style="color: darkgray;">正数增加余额，负数减少余额</span>
-                                </div>
+                        <div class="form-group">
+                            <label for="inputEmail3" class="col-xs-4 control-label"><em>*</em>调整金额：</label>
+                            <div class="col-xs-6">
+                                <input type="text" name="txtAmount" id="txtAmount" style="width: 200px;" maxlength="9" onkeyup="this.value = (this.value.match(/^[\+\-]?\d*?\.?\d{0,2}?$/) || [''])[0]" placeholder="0.00" />
+                                <span style="color: darkgray;">正数增加余额，负数减少余额</span>
+                            </div>
                         </div>
-                     <div class="form-group">
-                                <label for="inputEmail3" class="col-xs-4 control-label" ><em>*</em>调整备注：</label>
-                                <div class="col-xs-6">
-                                    <textarea type="text" id="txtSetAmountBark" name="txtSetAmountBark" rows="3" style="width: 200px;" placeholder="余额调整备注说明" maxlength="50"></textarea>
-                                </div>
+                        <div class="form-group">
+                            <label for="inputEmail3" class="col-xs-4 control-label"><em>*</em>调整备注：</label>
+                            <div class="col-xs-6">
+                                <textarea type="text" id="txtSetAmountBark" name="txtSetAmountBark" rows="3" style="width: 200px;" placeholder="余额调整备注说明" maxlength="50"></textarea>
+                            </div>
                         </div>
+                    </div>
+                    <div class="modal-footer">
+                        <input type="text" id="txtAmountUserId" value="" style="display: none;" />
+                        <input type="button" id="btnUpdateAmount" name="btnUpdateAmount" class="btn btn-primary" value="确定修改" />
+                        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                    </div>
                 </div>
-              <div class="modal-footer">
-                  <input type ="text" id ="txtAmountUserId" value ="" style ="display:none;" />
-                  <input type ="button" id ="btnUpdateAmount" name="btnUpdateAmount"  class="btn btn-primary" value="确定修改" />
-                  <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-              </div>
             </div>
-          </div>
+        </div>
+
+        <%--  调整绑定余额--%>
+        <div class="modal fade" id="SetUserDAmount">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" style="text-align: left" id="txtDTitle">调整绑定账户余额</h4>
+                    </div>
+                    <div class="modal-body form-horizontal">
+                        <div class="form-group">
+                            <label for="inputEmail3" class="col-xs-4 control-label">绑定账户余额：</label>
+                            <div class="col-xs-6">
+                                <label id="lbNowDAmount" style="margin-top: 7px; display: block">0</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputEmail3" class="col-xs-4 control-label"><em>*</em>调整金额：</label>
+                            <div class="col-xs-6">
+                                <input type="text" name="txtAmount" id="txtDAmount" style="width: 200px;" maxlength="9" onkeyup="this.value = (this.value.match(/^[\+\-]?\d*?\.?\d{0,2}?$/) || [''])[0]" placeholder="0.00" />
+                                <span style="color: darkgray;">正数增加余额，负数减少余额</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputEmail3" class="col-xs-4 control-label"><em>*</em>调整备注：</label>
+                            <div class="col-xs-6">
+                                <textarea type="text" id="txtSetDAmountBark" name="txtSetAmountBark" rows="3" style="width: 200px;" placeholder="余额调整备注说明" maxlength="50"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <input type="text" id="txtDAmountUserId" value="" style="display: none;" />
+                        <input type="button" id="btnUpdateDAmount" name="btnUpdateAmount" class="btn btn-primary" value="确定修改" />
+                        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                    </div>
+                </div>
+            </div>
         </div>
 
     </form>

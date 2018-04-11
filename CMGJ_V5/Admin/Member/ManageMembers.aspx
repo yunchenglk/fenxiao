@@ -236,7 +236,7 @@
                         <ItemTemplate>
                             <input type="hidden" class="actionInput" value="<%# Eval("Status") %>" key="<%# Eval("UserId") %>" />
                             <p>
-                                <a href='<%# Globals.GetAdminAbsolutePath(string.Format("/member/MembershipDetails.aspx?userId={0}", Eval("UserId")))%>'>&#12288;</a>
+                                <a href='<%# Globals.GetAdminAbsolutePath(string.Format("/member/MembershipDetails.aspx?userId={0}", Eval("UserId")))%>'>详情</a>
                                 <!-- <a href='<%# Globals.GetAdminAbsolutePath(string.Format("/member/EditMember.aspx?userId={0}", Eval("UserId")))%>'>编辑</a>-->
                                  <a href='javascript:void(0);' dataID="<%#Eval("UserId") %>">删除</a>
                             </p>

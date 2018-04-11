@@ -63,8 +63,13 @@ namespace Hidistro.User
             DbCommand dbCommand = this.db.GetSqlStringCommand(query);
             return this.db.ExecuteNonQuery(dbCommand) > 0;
         }
-        //注册送
-        public bool zhucesong(int mid, decimal amount)
+        /// <summary>
+        /// 给用户账户加钱
+        /// </summary>
+        /// <param name="mid">用户id</param>
+        /// <param name="amount">加多少钱</param>
+        /// <returns></returns>
+        public bool setTotalAmount(int mid, decimal amount)
         {
             string query = string.Format("UPDATE aspnet_Members SET TotalAmount = ((SELECT ISNULL(TotalAmount, 0) FROM aspnet_Members WHERE UserId = {0}) + {1}), AvailableAmount = ((SELECT ISNULL(AvailableAmount, 0) FROM aspnet_Members WHERE UserId = {2}  ) +{3}) WHERE UserId = {4}", mid, amount, mid, amount, mid);
             DbCommand dbCommand = this.db.GetSqlStringCommand(query);
@@ -74,6 +79,124 @@ namespace Hidistro.User
         public bool tuisong(string uname)
         {
             string query = string.Format("UPDATE aspnet_Members SET AvailableAmount = 5 WHERE	UserName = '{0}'", uname);
+            DbCommand dbCommand = this.db.GetSqlStringCommand(query);
+            return this.db.ExecuteNonQuery(dbCommand) > 0;
+        }
+        /// <summary>
+        /// 获取代理商状态
+        /// </summary>
+        /// <param name="mid">用户id</param>
+        /// <returns>状态(0代表正常，1代表冻结,9删除)</returns>
+        public int getaspnet_DistributorsStatus(int mid)
+        {
+            string query = string.Format("SELECT ReferralStatus FROM aspnet_Distributors WHERE UserId = {0}", mid);
+            DbCommand dbCommand = this.db.GetSqlStringCommand(query);
+            object obj = db.ExecuteScalar(dbCommand);
+            return (Convert.ToInt32(obj));
+        }
+        /// <summary>
+        /// 获取充值金额
+        /// </summary>
+        /// <param name="PayId">支付id</param>
+        /// <returns></returns>
+        public decimal getChongzhiJine(string PayId)
+        {
+            string query = string.Format("SELECT TradeAmount FROM Hishop_MemberAmountDetailed WHERE PayId = {0}", PayId);
+            DbCommand dbCommand = this.db.GetSqlStringCommand(query);
+            object obj = db.ExecuteScalar(dbCommand);
+            return (Convert.ToDecimal(obj));
+        }
+        /// <summary>
+        /// 送经验
+        /// </summary>
+        /// <param name="mid">用户id</param>
+        /// <param name="jingyan">送多少经验</param>
+        /// <returns></returns>
+        public bool updateJY(int mid, int jingyan)
+        {
+            string query = string.Format("update aspnet_Members set points = ((select points from aspnet_Members where UserId = {0}) + {1})  where UserId = {2}", mid, jingyan, mid);
+            DbCommand dbCommand = this.db.GetSqlStringCommand(query);
+            return this.db.ExecuteNonQuery(dbCommand) > 0;
+        }
+        /// <summary>
+        /// 获取会员推荐者ID
+        /// </summary>
+        /// <param name="mid">用户id</param>
+        /// <returns></returns>
+        public int getShangjiUID(int mid)
+        {
+            string query = string.Format("select ReferralUserId  from aspnet_Members where UserId = {0}", mid);
+            DbCommand dbCommand = this.db.GetSqlStringCommand(query);
+            object obj = db.ExecuteScalar(dbCommand);
+            return (Convert.ToInt32(obj));
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="bandname"></param>
+        /// <returns></returns>
+        public int getUserByBindName(string bandname)
+        {
+            string query = string.Format("select UserId from aspnet_Members where UserBindName = {0}", bandname);
+            DbCommand dbCommand = this.db.GetSqlStringCommand(query);
+            object obj = db.ExecuteScalar(dbCommand);
+            return (Convert.ToInt32(obj));
+        }
+        /// <summary>
+        /// 获取用户代理级别
+        /// </summary>
+        /// <param name="mid">用户id</param>
+        /// <returns></returns>
+        public int getUserGID(int mid)
+        {
+            string query = string.Format("select GradeId from aspnet_Members where UserId = {0}", mid);
+            DbCommand dbCommand = this.db.GetSqlStringCommand(query);
+            object obj = db.ExecuteScalar(dbCommand);
+            return (Convert.ToInt32(obj));
+        }
+        /// <summary>
+        /// 获取折扣比例
+        /// </summary>
+        /// <param name="GID">级别id</param>
+        /// <returns></returns>
+        public int getDiscount(int gid)
+        {
+            string query = string.Format("select Discount from aspnet_MemberGrades where GradeId = {0}", gid);
+            DbCommand dbCommand = this.db.GetSqlStringCommand(query);
+            object obj = db.ExecuteScalar(dbCommand);
+            return (Convert.ToInt32(obj));
+        }
+        /// <summary>
+        /// 获取用户绑定金额
+        /// </summary>
+        /// <param name="mid"></param>
+        /// <returns></returns>
+        public decimal getBanddingjine(int mid)
+        {
+            string query = string.Format("SELECT DAmount FROM aspnet_Members WHERE UserID = {0}", mid);
+            DbCommand dbCommand = this.db.GetSqlStringCommand(query);
+            object obj = db.ExecuteScalar(dbCommand);
+            return (Convert.ToDecimal(obj));
+        }
+        /// <summary>
+        /// 获取账户金额
+        /// </summary>
+        /// <returns></returns>
+        public decimal getZhanghujine(int mid)
+        {
+            string query = string.Format("SELECT AvailableAmount FROM aspnet_Members WHERE UserID = {0}", mid);
+            DbCommand dbCommand = this.db.GetSqlStringCommand(query);
+            object obj = db.ExecuteScalar(dbCommand);
+            return (Convert.ToDecimal(obj));
+        }
+        /// <summary>
+        /// 更新绑定金额
+        /// </summary>
+        /// <param name="mid"></param>
+        /// <returns></returns>
+        public bool gxbdje(int mid)
+        {
+            string query = string.Format("UPDATE aspnet_Members SET DAmount = AvailableAmount + DAmount, AvailableAmount = 0 WHERE UserId = {0}", mid);
             DbCommand dbCommand = this.db.GetSqlStringCommand(query);
             return this.db.ExecuteNonQuery(dbCommand) > 0;
         }

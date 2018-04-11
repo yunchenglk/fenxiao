@@ -69,10 +69,10 @@
                         <div class="col-xs-7">
 
                             <asp:CheckBoxList ID="DrawPayType" RepeatDirection="Horizontal" RepeatLayout="Flow" runat="server">
-                          <asp:ListItem Value="1" onclick="selpay(1,this)">支付宝</asp:ListItem>  　　
+                          <%--<asp:ListItem Value="1" onclick="selpay(1,this)">支付宝</asp:ListItem>--%>  　　
                         <asp:ListItem  Value="0"  onclick="selpay(0,this)" >微信支付</asp:ListItem>
-                        <asp:ListItem  Value="2">线下转账</asp:ListItem>
-                        <asp:ListItem  Value="3">微信红包</asp:ListItem>
+                        <%--<asp:ListItem  Value="2">线下转账</asp:ListItem>--%>
+                        <%--<asp:ListItem  Value="3">微信红包</asp:ListItem>--%>
                             </asp:CheckBoxList>
                             <small>如需使用支付宝或微信支付自动转账，请先设置好支付宝和微信支付的账号信息；线下转账方式是分销商提现时，填写自己的收款帐户信息，管理员再根据信息手工转账
 </small>
@@ -82,7 +82,7 @@
 
 
 
-                    <div class="form-group" id="alipaypanel" runat="server">
+                    <div class="form-group" id="alipaypanel" runat="server" style="display:none;">
                         <label for="inputEmail3" class="col-xs-2 control-label"><em>*</em>支付宝批量转账：</label>
                         <div class="col-xs-7">
                             <div class="switch">
@@ -105,7 +105,7 @@
                         </div>
                     </div>
 
-         <div class="form-group has-feedback">
+         <div class="form-group has-feedback" style="display:none;">
                         <label class="col-xs-2 control-label">姓名校验类型：</label>
                         <div class="col-xs-7">
 

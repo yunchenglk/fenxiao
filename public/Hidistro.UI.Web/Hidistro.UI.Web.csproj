@@ -1268,6 +1268,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Hidistro.Util\Hidistro.Util.csproj">
+      <Project>{7db8fc71-af81-4c96-9485-f6c7e8b542da}</Project>
+      <Name>Hidistro.Util</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Hidistro.ControlPanel\Hidistro.ControlPanel.csproj">
       <Project>{694b026e-225a-43d6-9244-88970bdb1668}</Project>
       <Name>Hidistro.ControlPanel</Name>

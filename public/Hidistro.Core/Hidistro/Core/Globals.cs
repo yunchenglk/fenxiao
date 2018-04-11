@@ -570,11 +570,11 @@
             string str = string.Empty;
             if (userid > 0)
             {
-                str = username + "的小店_" + userid.ToString();
+                str = username + "的团队_" + userid.ToString();
             }
             else
             {
-                str = username + "的小店";
+                str = username + "的团队";
             }
             if (!string.IsNullOrEmpty(openid))
             {

@@ -71,7 +71,7 @@
                 int total = 0;
                 CouponHelper.GetMemberCoupons(search, ref total);
                 this.litCoupon = (Literal) this.FindControl("litCoupon");
-                this.litCoupon.Text = total.ToString();
+                this.litCoupon.Text = total.ToString("F2");
                 this.litBindUser = (Literal) this.FindControl("litBindUser");
                 this.litExpenditure = (Literal) this.FindControl("litExpenditure");
                 this.litExpenditure.SetWhenIsNotNull("￥" + currentMemberInfo.Expenditure.ToString("F2"));
@@ -198,7 +198,9 @@
                     {
                         num9 = 0.01M;
                     }
-                    this.UpClassInfo.InnerHtml = "再交易<span>" + num8.ToString() + "次 </span>或消费<span> " + Math.Round((decimal) (num9 + 0.49M), 0).ToString() + "元 </span>升级";
+
+                    this.UpClassInfo.InnerHtml = "再消费<span> " + Math.Round((decimal)(num9 + 0.49M), 0).ToString() + "元 </span>升级";
+                    //this.UpClassInfo.InnerHtml = "再交易<span>" + num8.ToString() + "次 </span>或消费<span> " + Math.Round((decimal) (num9 + 0.49M), 0).ToString() + "元 </span>升级";
                 }
             }
         }

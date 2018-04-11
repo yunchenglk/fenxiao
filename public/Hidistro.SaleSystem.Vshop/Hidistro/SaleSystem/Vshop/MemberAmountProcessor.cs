@@ -34,7 +34,8 @@
             if (flag)
             {
                 MemberInfo member = new MemberDao().GetMember(applyInfo.UserId);
-                MemberAmountDetailedInfo model = new MemberAmountDetailedInfo {
+                MemberAmountDetailedInfo model = new MemberAmountDetailedInfo
+                {
                     UserId = applyInfo.UserId,
                     TradeAmount = -applyInfo.Amount,
                     PayId = Globals.GetGenerateId(),
@@ -165,6 +166,11 @@
             }
             return flag;
         }
+        public static bool SetDAmount(Decimal DAmount, int uid)
+        {
+            AmountDao dao = new AmountDao();
+            return dao.UpdateMemberDAmount(DAmount, uid, null);
+        }
 
         public static bool SetAmountRequestStatus(int[] serialids, int checkValue, string Remark = "", string Amount = "", string Operator = "")
         {
@@ -175,7 +181,8 @@
                 {
                     MemberAmountRequestInfo amountRequestDetail = GetAmountRequestDetail(num);
                     MemberInfo member = new MemberDao().GetMember(amountRequestDetail.UserId);
-                    MemberAmountDetailedInfo model = new MemberAmountDetailedInfo {
+                    MemberAmountDetailedInfo model = new MemberAmountDetailedInfo
+                    {
                         UserId = amountRequestDetail.UserId,
                         TradeAmount = amountRequestDetail.Amount,
                         PayId = Globals.GetGenerateId(),

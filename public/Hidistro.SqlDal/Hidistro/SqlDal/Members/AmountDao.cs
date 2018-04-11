@@ -117,7 +117,8 @@
             bool flag = true;
             int num = 0x4e20;
             int num2 = amount;
-            SendRedpackRecordInfo sendredpackinfo = new SendRedpackRecordInfo {
+            SendRedpackRecordInfo sendredpackinfo = new SendRedpackRecordInfo
+            {
                 BalanceDrawRequestID = serialid,
                 UserID = userid,
                 OpenID = openid,
@@ -212,9 +213,9 @@
                 info.PayId = table.Rows[0]["PayId"].ToString();
                 info.TradeAmount = Math.Round(decimal.Parse(table.Rows[0]["TradeAmount"].ToString()), 2);
                 info.AvailableAmount = Math.Round(decimal.Parse(table.Rows[0]["AvailableAmount"].ToString()), 2);
-                info.TradeType = (TradeType) table.Rows[0]["TradeType"];
+                info.TradeType = (TradeType)table.Rows[0]["TradeType"];
                 info.UserName = table.Rows[0]["UserName"].ToString();
-                info.TradeWays = (TradeWays) table.Rows[0]["TradeWays"];
+                info.TradeWays = (TradeWays)table.Rows[0]["TradeWays"];
                 info.TradeTime = DateTime.Parse(table.Rows[0]["TradeTime"].ToString());
                 info.Remark = table.Rows[0]["Remark"].ToString();
                 info.State = int.Parse(table.Rows[0]["State"].ToString());
@@ -237,9 +238,9 @@
                 info.PayId = table.Rows[0]["PayId"].ToString();
                 info.TradeAmount = Math.Round(decimal.Parse(table.Rows[0]["TradeAmount"].ToString()), 2);
                 info.AvailableAmount = Math.Round(decimal.Parse(table.Rows[0]["AvailableAmount"].ToString()), 2);
-                info.TradeType = (TradeType) table.Rows[0]["TradeType"];
+                info.TradeType = (TradeType)table.Rows[0]["TradeType"];
                 info.UserName = table.Rows[0]["UserName"].ToString();
-                info.TradeWays = (TradeWays) table.Rows[0]["TradeWays"];
+                info.TradeWays = (TradeWays)table.Rows[0]["TradeWays"];
                 info.TradeTime = DateTime.Parse(table.Rows[0]["TradeTime"].ToString());
                 info.Remark = table.Rows[0]["Remark"].ToString();
                 info.State = int.Parse(table.Rows[0]["State"].ToString());
@@ -387,13 +388,13 @@
             info.UserName = table.Rows[0]["UserName"].ToString();
             info.RequestTime = DateTime.Parse(table.Rows[0]["RequestTime"].ToString());
             info.Amount = Math.Round(decimal.Parse(table.Rows[0]["Amount"].ToString()), 2);
-            info.RequestType = (RequesType) table.Rows[0]["RequestType"];
+            info.RequestType = (RequesType)table.Rows[0]["RequestType"];
             info.AccountCode = table.Rows[0]["AccountCode"].ToString();
             info.AccountName = table.Rows[0]["AccountName"].ToString();
             info.BankName = table.Rows[0]["BankName"].ToString();
             info.Remark = table.Rows[0]["Remark"].ToString();
             info.RedpackId = (table.Rows[0]["RedpackId"] == DBNull.Value) ? "" : table.Rows[0]["RedpackId"].ToString();
-            info.State = (RequesState) table.Rows[0]["State"];
+            info.State = (RequesState)table.Rows[0]["State"];
             if (table.Rows[0]["CheckTime"] != DBNull.Value)
             {
                 info.CheckTime = new DateTime?(DateTime.Parse(table.Rows[0]["CheckTime"].ToString()));
@@ -616,7 +617,7 @@
             {
                 foreach (DataRow row in table.Rows)
                 {
-                    dictionary.Add((int) row["Id"], (int) row["State"]);
+                    dictionary.Add((int)row["Id"], (int)row["State"]);
                 }
             }
             return dictionary;
@@ -655,8 +656,9 @@
 
         public bool MemberAmountAddByRefund(MemberInfo memberInfo, decimal amount, string orderid)
         {
-            MemberAmountDetailedInfo info=new MemberAmountDetailedInfo();
-            info = new MemberAmountDetailedInfo {
+            MemberAmountDetailedInfo info = new MemberAmountDetailedInfo();
+            info = new MemberAmountDetailedInfo
+            {
                 UserId = memberInfo.UserId,
                 UserName = memberInfo.UserName,
                 PayId = Globals.GetGenerateId(),
@@ -755,6 +757,18 @@
             this.database.AddInParameter(sqlStringCommand, "UserId", DbType.Int32, model.UserId);
             this.database.AddInParameter(sqlStringCommand, "TradeAmount", DbType.Decimal, model.TradeAmount);
             this.database.AddInParameter(sqlStringCommand, "TotalAmount", DbType.Decimal, (model.TradeAmount > 0M) ? model.TradeAmount : 0M);
+            if (dbTrans == null)
+            {
+                return (this.database.ExecuteNonQuery(sqlStringCommand) > 0);
+            }
+            return (this.database.ExecuteNonQuery(sqlStringCommand, dbTrans) > 0);
+        }
+        public bool UpdateMemberDAmount(Decimal DAmount, int uid, DbTransaction dbTrans = null)
+        {
+            string query = "Update aspnet_Members set TotalAmount=TotalAmount+@DAmount,DAmount=ISNULL(DAmount,0)+@DAmount where UserID=" + uid;
+            Util.Utils.WriteLogs(query);
+            DbCommand sqlStringCommand = this.database.GetSqlStringCommand(query);
+            this.database.AddInParameter(sqlStringCommand, "DAmount", DbType.Decimal, DAmount);
             if (dbTrans == null)
             {
                 return (this.database.ExecuteNonQuery(sqlStringCommand) > 0);

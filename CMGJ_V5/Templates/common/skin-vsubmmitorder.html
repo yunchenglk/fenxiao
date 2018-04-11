@@ -53,10 +53,10 @@
     <div style="display:none;" class="mb10 clearfix" <asp:literal runat="server" id="litDisplayPoint" />>
         <asp:literal runat="server" id="litUseMembersPointShow" />
     </div>
-    <div class="mb10 clearfix" style="display:none;">
+    <div class="mb10 clearfix">
             <asp:literal runat="server" id="litIsUseBalance" />
     
-    <div class="btn-group selectPaymentType">
+    <div class="btn-group selectPaymentType" style="top:-100px;position:fixed">
         <hi:common_paymenttypeselect runat="server" />
         <input type="hidden" runat="server" clientidmode="Static" id="selectPaymentType" />
     </div>
@@ -69,7 +69,7 @@
                 <td class="text-right">实付积分：</td>
                 <td class="text-left"><span id="GetPointNumber"><asp:literal runat="server" id="litPointNumber" /></span></td>
             </tr>
-            <tr>
+            <tr style="display:none">
                 <td class="text-right">积分抵扣：</td>
                 <td class="text-left" id="pointToMoney">¥0.00</td>
             </tr>
@@ -77,7 +77,7 @@
                 <td class="text-right">商品金额：</td>
                 <td class="text-left" id="ProductExemptionTotal">¥0.00</td>
             </tr>
-            <tr>
+            <tr style="display:none">
                 <td class="text-right">活动减免：</td>
                 <td class="text-left" id="PreferentialTotal">¥0.00</td>
             </tr>
@@ -113,6 +113,7 @@
     });
     //检测是否够支付了
     function checkPayMoney() {
+        $('#mySwitchUseBalance').bootstrapSwitch('setState', true);
         $("#total").html('0.00');
         var sumtotal = 0;
         shiptotal = 0;
@@ -140,7 +141,7 @@
         });
         $("#ProductExemptionTotal").html("¥" + ProductExemptionTotal.toFixed(2));//商品金额
 
-        $("#PreferentialTotal").html((PreferentialTotal > 0 ? "-¥" : "¥") + PreferentialTotal.toFixed(2));//活动减免
+       // $("#PreferentialTotal").html((PreferentialTotal > 0 ? "-¥" : "¥") + PreferentialTotal.toFixed(2));//活动减免
         var finallyMoney = sumtotal;
         if ($("#mySwitchUseMembersPoint input[type='checkbox']").is(":checked")) {
             finallyMoney -= parseFloat($("#usepointmoney").html());

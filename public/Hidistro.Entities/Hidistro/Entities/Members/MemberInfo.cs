@@ -18,6 +18,7 @@
         public string AlipayUsername { get; set; }
 
         public decimal AvailableAmount { get; set; }
+        public decimal DAmount { get; set; }
 
         public string CardID { get; set; }
 

@@ -38,11 +38,11 @@
                 decimal num5 = num3 - shippingModeInfo.Weight;
                 if ((num5 % shippingModeInfo.AddWeight) == 0M)
                 {
-                    num4 = Convert.ToInt32(Math.Truncate((decimal) ((num3 - shippingModeInfo.Weight) / shippingModeInfo.AddWeight.Value)));
+                    num4 = Convert.ToInt32(Math.Truncate((decimal)((num3 - shippingModeInfo.Weight) / shippingModeInfo.AddWeight.Value)));
                 }
                 else
                 {
-                    num4 = Convert.ToInt32(Math.Truncate((decimal) ((num3 - shippingModeInfo.Weight) / shippingModeInfo.AddWeight.Value))) + 1;
+                    num4 = Convert.ToInt32(Math.Truncate((decimal)((num3 - shippingModeInfo.Weight) / shippingModeInfo.AddWeight.Value))) + 1;
                 }
             }
             if ((shippingModeInfo.ModeGroup == null) || (shippingModeInfo.ModeGroup.Count == 0))
@@ -126,7 +126,8 @@
             {
                 return null;
             }
-            OrderInfo info = new OrderInfo {
+            OrderInfo info = new OrderInfo
+            {
                 Points = shoppingCart.GetPoint(),
                 ReducedPromotionId = shoppingCart.ReducedPromotionId,
                 ReducedPromotionName = shoppingCart.ReducedPromotionName,
@@ -152,7 +153,8 @@
             {
                 foreach (ShoppingCartItemInfo info3 in shoppingCart.LineItems)
                 {
-                    LineItemInfo info4 = new LineItemInfo {
+                    LineItemInfo info4 = new LineItemInfo
+                    {
                         SkuId = info3.SkuId,
                         ProductId = info3.ProductId,
                         SKU = info3.SKU,
@@ -225,7 +227,7 @@
             }
             MemberInfo currentMember = MemberProcessor.GetCurrentMember();
             Database database = DatabaseFactory.CreateDatabase();
-            int quantity = orderInfo.LineItems.Sum<KeyValuePair<string, LineItemInfo>>((Func<KeyValuePair<string, LineItemInfo>, int>) (item => item.Value.Quantity));
+            int quantity = orderInfo.LineItems.Sum<KeyValuePair<string, LineItemInfo>>((Func<KeyValuePair<string, LineItemInfo>, int>)(item => item.Value.Quantity));
             lock (createOrderLocker)
             {
                 if (orderInfo.GroupBuyId > 0)
@@ -238,7 +240,7 @@
                     DbTransaction dbTran = connection.BeginTransaction();
                     try
                     {
-                        orderInfo.ClientShortType = (ClientShortType) Globals.GetClientShortType();
+                        orderInfo.ClientShortType = (ClientShortType)Globals.GetClientShortType();
                         if (!new OrderDao().CreatOrder(orderInfo, dbTran))
                         {
                             dbTran.Rollback();
@@ -268,8 +270,9 @@
                         {
                             if ((info3.Type == 1) && (info3.ExchangeId > 0))
                             {
-                                PointExchangeChangedInfo info4=new PointExchangeChangedInfo ();
-                                info4 = new PointExchangeChangedInfo {
+                                PointExchangeChangedInfo info4 = new PointExchangeChangedInfo();
+                                info4 = new PointExchangeChangedInfo
+                                {
                                     exChangeId = info3.ExchangeId,
                                     exChangeName = new OrderDao().GetexChangeName(info4.exChangeId),
                                     ProductId = info3.ProductId,
@@ -283,7 +286,8 @@
                                     dbTran.Rollback();
                                     return 0;
                                 }
-                                IntegralDetailInfo point = new IntegralDetailInfo {
+                                IntegralDetailInfo point = new IntegralDetailInfo
+                                {
                                     IntegralChange = -info3.PointNumber,
                                     IntegralSource = "积分兑换商品-订单号：" + orderInfo.OrderMarking,
                                     IntegralSourceType = 2,
@@ -301,7 +305,8 @@
                         }
                         if (orderInfo.PointExchange > 0)
                         {
-                            IntegralDetailInfo info6 = new IntegralDetailInfo {
+                            IntegralDetailInfo info6 = new IntegralDetailInfo
+                            {
                                 IntegralChange = -orderInfo.PointExchange,
                                 IntegralSource = "积分抵现，订单号：" + orderInfo.OrderId,
                                 IntegralSourceType = 2,
@@ -445,6 +450,7 @@
         public static int OrderBalanceUpdate(OrderInfo orderInfo, int userid, decimal remainingMondy)
         {
             MemberInfo member = new MemberDao().GetMember(userid);
+            member.AvailableAmount = member.AvailableAmount + member.DAmount;
             if (member == null)
             {
                 return 0;
@@ -526,7 +532,8 @@
             if (num2 > 0M)
             {
                 MemberAmountDetailedInfo info4 = new MemberAmountDetailedInfo();
-                info4 = new MemberAmountDetailedInfo {
+                info4 = new MemberAmountDetailedInfo
+                {
                     UserId = member.UserId,
                     UserName = member.UserName,
                     PayId = Globals.GetGenerateId(),

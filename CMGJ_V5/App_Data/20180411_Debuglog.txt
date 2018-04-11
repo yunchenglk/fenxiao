@@ -1,0 +1,53 @@
+2018-04-11 14:01:59.314:ReferralId：32823
+
+---------------
+2018-04-11 14:08:57.145:关闭计划任务失败：The Scheduler has been Shutdown.
+---------------
+2018-04-11 14:11:16.194:关闭计划任务失败：The Scheduler has been Shutdown.
+---------------
+2018-04-11 15:03:59.086:关闭计划任务失败：The Scheduler has been Shutdown.
+---------------
+2018-04-11 16:13:58.324:关闭计划任务失败：The Scheduler has been Shutdown.
+---------------
+2018-04-11 16:15:21.882:关闭计划任务失败：The Scheduler has been Shutdown.
+---------------
+2018-04-11 16:18:36.350:关闭计划任务失败：The Scheduler has been Shutdown.
+---------------
+2018-04-11 16:40:37.362:关闭计划任务失败：The Scheduler has been Shutdown.
+---------------
+2018-04-11 16:43:20.721:关闭计划任务失败：The Scheduler has been Shutdown.
+---------------
+2018-04-11 16:45:29.004:关闭计划任务失败：The Scheduler has been Shutdown.
+---------------
+2018-04-11 16:46:35.347:关闭计划任务失败：The Scheduler has been Shutdown.
+---------------
+2018-04-11 16:52:31.844:关闭计划任务失败：The Scheduler has been Shutdown.
+---------------
+2018-04-11 16:54:42.297:关闭计划任务失败：The Scheduler has been Shutdown.
+---------------
+2018-04-11 16:55:17.723:关闭计划任务失败：The Scheduler has been Shutdown.
+---------------
+2018-04-11 16:57:19.545:关闭计划任务失败：The Scheduler has been Shutdown.
+---------------
+2018-04-11 17:23:48.636:关闭计划任务失败：The Scheduler has been Shutdown.
+---------------
+2018-04-11 18:01:23.154:关闭计划任务失败：The Scheduler has been Shutdown.
+---------------
+2018-04-11 18:45:56.117:关闭计划任务失败：The Scheduler has been Shutdown.
+---------------
+2018-04-11 18:47:41.928:关闭计划任务失败：The Scheduler has been Shutdown.
+---------------
+2018-04-11 19:55:26.938:关闭计划任务失败：The Scheduler has been Shutdown.
+---------------
+2018-04-11 20:11:44.583:关闭计划任务失败：The Scheduler has been Shutdown.
+---------------
+2018-04-11 20:32:51.895:关闭计划任务失败：The Scheduler has been Shutdown.
+---------------
+2018-04-11 20:39:04.800:returnUrl:http://sxccmay.com/API/ExpressReturn.ashx?action=SaveExpressData
+---------------
+2018-04-11 20:39:04.800:{"result":false,"returnCode":"600","message":"POLL:您不是合法的订阅者"}
+---------------
+2018-04-11 20:39:29.473:关闭计划任务失败：The Scheduler has been Shutdown.
+---------------
+2018-04-11 20:48:04.116:关闭计划任务失败：The Scheduler has been Shutdown.
+---------------

@@ -13,9 +13,9 @@ namespace Hidistro.UI.SaleSystem.CodeBehind
     [ParseChildren(true)]
     public class v_jinrirenwu : VMemberTemplatedWebControl
     {
+        private Literal litUserID;
         protected override void AttachChildControls()
         {
-
         }
         protected override void OnInit(EventArgs e)
         {

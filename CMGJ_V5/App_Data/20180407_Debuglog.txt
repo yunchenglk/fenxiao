@@ -1,0 +1,18 @@
+2018-04-07 11:03:49.308:关闭计划任务失败：The Scheduler has been Shutdown.
+---------------
+2018-04-07 11:13:38.545:ReferralId：32784
+
+---------------
+2018-04-07 11:40:58.131:关闭计划任务失败：The Scheduler has been Shutdown.
+---------------
+2018-04-07 11:45:41.090:关闭计划任务失败：The Scheduler has been Shutdown.
+---------------
+2018-04-07 11:48:07.299:returnUrl:http://sxccmay.com/API/ExpressReturn.ashx?action=SaveExpressData
+---------------
+2018-04-07 11:48:07.299:{"result":false,"returnCode":"600","message":"POLL:您不是合法的订阅者"}
+---------------
+2018-04-07 12:06:26.372:ReferralId：32788
+
+---------------
+2018-04-07 12:29:24.489:关闭计划任务失败：The Scheduler has been Shutdown.
+---------------

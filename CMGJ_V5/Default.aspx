@@ -293,9 +293,9 @@
         <img src="/Admin/Shop/PublicMob/images/mmexport.png" width="100%" alt=""><a href="javascript:;" class="a-know">我知道了</a>
     </div>
     <script src="/Admin/Shop/PublicMob/js/dist/lib-min.js"></script>
-    <script src="/Admin/Shop/PublicMob/js/dist/main.js?20160420"></script>
+    <script src="/Admin/Shop/PublicMob/js/dist/main.js"></script>
     <H2:MeiQiaSet ID="MeiQiaSet" runat="server"></H2:MeiQiaSet>
-    <script src="/templates/common/script/WeiXinShare.js?2016"></script>
+    <script src="/templates/common/script/WeiXinShare.js"></script>
     <script>WinXinShareMessage(wxinshare_title, wxinshare_desc, wxinshare_link, wxinshare_imgurl);</script>
     <script src="/Admin/shop/Public/js/dist/underscore.js"></script>
     <script src="/Utility/ShowIndex.js?20160818"></script>

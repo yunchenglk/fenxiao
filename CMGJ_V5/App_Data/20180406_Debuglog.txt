@@ -1,0 +1,21 @@
+2018-04-06 17:05:42.226:关闭计划任务失败：The Scheduler has been Shutdown.
+---------------
+2018-04-06 17:09:15.237:关闭计划任务失败：The Scheduler has been Shutdown.
+---------------
+2018-04-06 17:34:07.780:关闭计划任务失败：The Scheduler has been Shutdown.
+---------------
+2018-04-06 17:34:42.841:关闭计划任务失败：The Scheduler has been Shutdown.
+---------------
+2018-04-06 17:44:38.058:关闭计划任务失败：The Scheduler has been Shutdown.
+---------------
+2018-04-06 18:00:52.777:关闭计划任务失败：The Scheduler has been Shutdown.
+---------------
+2018-04-06 18:45:58.190:关闭计划任务失败：The Scheduler has been Shutdown.
+---------------
+2018-04-06 19:37:21.294:关闭计划任务失败：The Scheduler has been Shutdown.
+---------------
+2018-04-06 20:16:36.400:ReferralId：0
+
+---------------
+2018-04-06 21:10:00.023:关闭计划任务失败：The Scheduler has been Shutdown.
+---------------

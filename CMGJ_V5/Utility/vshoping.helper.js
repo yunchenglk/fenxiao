@@ -137,7 +137,7 @@ function submmitorder() {
     var paymentTypeSel = $("#selectPaymentType").val();
     if (!paymentTypeSel) {
         if ($(".selectPaymentType").is(":visible")) {
-            alert_h("请选择支付方式");
+            alert_h("请充值后再进行付款");
             return false;
         } else {
             paymentTypeSel = 66;//余额支付
@@ -162,11 +162,18 @@ function submmitorder() {
             productSku: getParam("productSku"), buyAmount: getParam("buyAmount"), from: getParam("from"), shiptoDate: $("#selectShipToDate").val(), groupbuyId: $('#groupbuyHiddenBox').val(), remark: remark, bargainDetialId: bargainDetialID, limitedTimeDiscountId: limitedTimeDiscountId
         },
         success: function (resultData) {
+            var oid = resultData.OrderId;
             maskayer(1);
             if (resultData.Status == "OK") {
-
+                $.ajax({
+                    url: "/API/CMGJ.ashx",
+                    type: 'post', dataType: 'json', timeout: 10000,
+                    data: { action: "xiuzhengjine" },
+                    success: function (resultData) {
+                        location.href = "/Vshop/FinishOrder.aspx?orderId=" + oid;
+                    }
+                });
                 //if (resultData.OrderMarkingStatus=="0")
-                location.href = "/Vshop/FinishOrder.aspx?orderId=" + resultData.OrderId;
             }
             else if (resultData.ErrorMsg) {
 
