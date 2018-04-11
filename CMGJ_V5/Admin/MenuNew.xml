@@ -98,17 +98,17 @@
     </Item>
     <Item ID="fxi02" Title="代理商管理" Class="glyphicon ico-fenxiao">
       <PageLink ID="fxp03"  Title="代理商列表" Link="Fenxiao/distributorlist.aspx"/>
-      <PageLink ID="fxp04"  Title="代理商等级" Link="Fenxiao/distributorgradelist.aspx"/>
-      <PageLink ID="fxp12"  Title="代理商升级奖励" Link="Fenxiao/distributorupdateset.aspx"/>
+      <!--<PageLink ID="fxp04"  Title="代理商等级" Link="Fenxiao/distributorgradelist.aspx"/>-->
+      <!--<PageLink ID="fxp12"  Title="代理商升级奖励" Link="Fenxiao/distributorupdateset.aspx"/>-->
       <PageLink ID="fxp05"  Title="销售排行榜" Link="Fenxiao/DistributorStatistics.aspx"/>
-      <PageLink ID="fxp11"  Title="自定义排行榜" Link="Fenxiao/CustomDistributorStatistics.aspx"/>
-      <PageLink ID="fxp07"  Title="批量生成账号" Link="Fenxiao/branchadddistributors.aspx"/>
+      <!--<PageLink ID="fxp11"  Title="自定义排行榜" Link="Fenxiao/CustomDistributorStatistics.aspx"/>-->
+      <!--<PageLink ID="fxp07"  Title="批量生成账号" Link="Fenxiao/branchadddistributors.aspx"/>-->
     </Item>
-    <Item ID="fxi03" Title="佣金管理" Class="glyphicon ico-yongjin">
+    <!--<Item ID="fxi03" Title="佣金管理" Class="glyphicon ico-yongjin">
       <PageLink ID="fxp08"  Title="佣金明细" Link="Fenxiao/CommissionsAllList.aspx"/>
       <PageLink ID="fxp09"  Title="提现申请" Link="Fenxiao/BalanceDrawApplyList.aspx"/>
       <PageLink ID="fxp10"  Title="提现记录" Link="Fenxiao/BalanceDrawRequestList.aspx"/>
-    </Item>
+    </Item>-->
   </Module>
   <Module Title="微信" IsDivide="true" ID="m06" Link="weixin/wxconfig.aspx?firstPage=1">
     <Item ID="wxi01">
